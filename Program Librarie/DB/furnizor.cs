@@ -27,6 +27,7 @@ namespace Program_Librarie.DB
         public string CUI { get; set; }
         public double Sold { get; set; }
         public string Email { get; set; }
+        public string Telefon { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<achizitie> achizitie { get; set; }

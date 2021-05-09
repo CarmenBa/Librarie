@@ -24,8 +24,8 @@ namespace Program_Librarie.DB
         public System.DateTime DataExpirare { get; set; }
         public int IdFurnizor { get; set; }
     
-        public virtual furnizor furnizor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<linieoferta> linieoferta { get; set; }
+        public virtual furnizor furnizor { get; set; }
     }
 }

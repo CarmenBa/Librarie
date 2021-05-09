@@ -448,7 +448,6 @@
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.achizitieTableAdapter = null;
             this.tableAdapterManager.autorTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.biroticaTableAdapter = null;
@@ -459,10 +458,7 @@
             this.tableAdapterManager.edituraTableAdapter = null;
             this.tableAdapterManager.furnizorTableAdapter = null;
             this.tableAdapterManager.linieachizitieTableAdapter = null;
-            this.tableAdapterManager.linieofertaTableAdapter = null;
             this.tableAdapterManager.linievanzareTableAdapter = null;
-            this.tableAdapterManager.ofertaTableAdapter = null;
-            this.tableAdapterManager.plataTableAdapter = null;
             this.tableAdapterManager.produsTableAdapter = null;
             this.tableAdapterManager.tipprodusTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Program_Librarie.LibrarieDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;

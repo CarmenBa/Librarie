@@ -27,10 +27,10 @@ namespace Program_Librarie.DB
         public string SerieDocument { get; set; }
         public System.DateTime Data { get; set; }
     
-        public virtual furnizor furnizor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<linieachizitie> linieachizitie { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<plata> plata { get; set; }
+        public virtual furnizor furnizor { get; set; }
     }
 }

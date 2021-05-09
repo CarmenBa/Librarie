@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="LabDataModel.client" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LabDataModel.domeniu" Width="1.5" PointX="7.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LabDataModel.editura" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LabDataModel.furnizor" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="LabDataModel.linieachizitie" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LabDataModel.linieoferta" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LabDataModel.linievanzare" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
@@ -23,21 +22,22 @@
         <EntityTypeShape EntityType="LabDataModel.utilizator" Width="1.5" PointX="9.75" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="LabDataModel.vanzari" Width="1.5" PointX="3" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LabDataModel.cartedetaliu" Width="1.5" PointX="11.75" PointY="6.375" IsExpanded="true" />
-        <AssociationConnector Association="LabDataModel.AchizitieFurnizor" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.LinieA_Achizitie" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.PlataAchizitie" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.CarteAutor" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.CarteDomeniu" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.CarteEditura" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.VanzariClient" ManuallyRouted="false" />
-        <AssociationConnector Association="LabDataModel.OfertaFurnizor" ManuallyRouted="false" />
-        <AssociationConnector Association="LabDataModel.PlataFurnizor" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.LinieA_Produs" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.LinieO_Oferta" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.LinieO_Produs" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.LinieV_Produs" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.LinieV_Vanzare" ManuallyRouted="false" />
         <AssociationConnector Association="LabDataModel.produs_ibfk_1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LabDataModel.furnizor" Width="1.5" PointX="0.75" PointY="8" />
+        <AssociationConnector Association="LabDataModel.AchizitieFurnizor" />
+        <AssociationConnector Association="LabDataModel.OfertaFurnizor" />
+        <AssociationConnector Association="LabDataModel.PlataFurnizor" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

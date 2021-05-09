@@ -46,7 +46,11 @@ namespace Program_Librarie
             var currentEdit = GetEditItem();
             using (LabDataContext lb = new LabDataContext())
             {
-                if (!lb.autor.Any(x => x.Nume.Equals(currentEdit.Nume, StringComparison.OrdinalIgnoreCase)))
+                if (lb.autor.Any(x => x.Nume.Equals(currentEdit.Nume, StringComparison.OrdinalIgnoreCase)))
+                {
+                    MessageBox.Show("Exista deja autor cu acest nume.");
+                }
+                else
                 {
                     var newAutor = new autor()
                     {
@@ -55,10 +59,6 @@ namespace Program_Librarie
                     lb.autor.Add(newAutor);
                     lb.SaveChanges();
                     UpdateGrid("Adauga");
-                }
-                else
-                {
-                    MessageBox.Show("Exista deja autor cu acest nume.");
                 }
             }
         }
@@ -71,7 +71,7 @@ namespace Program_Librarie
                 var autor = lb.autor.FirstOrDefault(x => x.IdAutor == currentEdit.Id);
                 autor.Nume = currentEdit.Nume;
                 lb.SaveChanges();
-                UpdateGrid("Modificat");
+                UpdateGrid("Modifica");
             }
         }
 
@@ -80,16 +80,16 @@ namespace Program_Librarie
             var currentEdit = GetEditItem();
             using (LabDataContext lb = new LabDataContext())
             {
-                if (!lb.carte.Any(x => x.IdAutor == currentEdit.Id))
+                if (lb.carte.Any(x => x.IdAutor == currentEdit.Id))
+                {
+                    MessageBox.Show("Autor nu poate fi sters.\r\nExista carti care folosesc acest autor.");
+                }
+                else
                 {
                     var autor = lb.autor.FirstOrDefault(x => x.IdAutor == currentEdit.Id);
                     lb.autor.Remove(autor);
                     lb.SaveChanges();
                     UpdateGrid("Sterge");
-                }
-                else
-                {
-                    MessageBox.Show("Exista carti care folosesc acest autor. Nu puteti sterge autorul.\r\nVa rugam sa schimbati autorii.");
                 }
             }
         }

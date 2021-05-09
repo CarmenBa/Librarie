@@ -71,7 +71,7 @@ namespace Program_Librarie
                 var editura = lb.editura.FirstOrDefault(x => x.IdEditura == currentEdit.Id);
                 editura.Nume = currentEdit.Nume;
                 lb.SaveChanges();
-                UpdateGrid("Modificat");
+                UpdateGrid("Modifica");
             }
         }
 
@@ -80,16 +80,17 @@ namespace Program_Librarie
             var currentEdit = GetEditItem();
             using (LabDataContext lb = new LabDataContext())
             {
-                if (!lb.carte.Any(x => x.IdEditura == currentEdit.Id))
+                if (lb.carte.Any(x => x.IdEditura == currentEdit.Id))
+                {
+                    MessageBox.Show("Editura nu poate fi stearsa.\r\nExista carti care folosesc aceasta editura.");
+                }
+                else
                 {
                     var editura = lb.editura.FirstOrDefault(x => x.IdEditura == currentEdit.Id);
                     lb.editura.Remove(editura);
                     lb.SaveChanges();
                     UpdateGrid("Sterge");
-                }
-                else
-                {
-                    MessageBox.Show("Exista carti care folosesc acest editura. Nu puteti sterge edituraul.\r\nVa rugam sa schimbati edituraii.");
+                    
                 }
             }
         }

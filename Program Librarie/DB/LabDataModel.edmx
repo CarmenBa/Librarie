@@ -78,6 +78,7 @@
           <Property Name="CUI" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Sold" Type="double" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="varchar" MaxLength="12" Nullable="false" />
         </EntityType>
         <EntityType Name="linieachizitie">
           <Key>
@@ -482,9 +483,9 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
           <Property Name="NrDocument" Type="Int32" Nullable="false" />
           <Property Name="SerieDocument" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Data" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="furnizor" Relationship="Self.AchizitieFurnizor" FromRole="achizitie" ToRole="furnizor" />
           <NavigationProperty Name="linieachizitie" Relationship="Self.LinieA_Achizitie" FromRole="achizitie" ToRole="linieachizitie" />
           <NavigationProperty Name="plata" Relationship="Self.PlataAchizitie" FromRole="achizitie" ToRole="plata" />
+          <NavigationProperty Name="furnizor" Relationship="LabDataModel.AchizitieFurnizor" FromRole="achizitie" ToRole="furnizor" />
         </EntityType>
         <EntityType Name="autor">
           <Key>
@@ -547,19 +548,6 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
           <Property Name="Nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="carte" Relationship="Self.CarteEditura" FromRole="editura" ToRole="carte" />
         </EntityType>
-        <EntityType Name="furnizor">
-          <Key>
-            <PropertyRef Name="IdFurnizor" />
-          </Key>
-          <Property Name="IdFurnizor" Type="Int32" Nullable="false" />
-          <Property Name="Nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CUI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Sold" Type="Double" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="achizitie" Relationship="Self.AchizitieFurnizor" FromRole="furnizor" ToRole="achizitie" />
-          <NavigationProperty Name="oferta" Relationship="Self.OfertaFurnizor" FromRole="furnizor" ToRole="oferta" />
-          <NavigationProperty Name="plata" Relationship="Self.PlataFurnizor" FromRole="furnizor" ToRole="plata" />
-        </EntityType>
         <EntityType Name="linieachizitie">
           <Key>
             <PropertyRef Name="IdAchizitie" />
@@ -602,8 +590,8 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
           <Property Name="IdOferta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DataExpirare" Type="DateTime" Nullable="false" />
           <Property Name="IdFurnizor" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="furnizor" Relationship="Self.OfertaFurnizor" FromRole="oferta" ToRole="furnizor" />
           <NavigationProperty Name="linieoferta" Relationship="Self.LinieO_Oferta" FromRole="oferta" ToRole="linieoferta" />
+          <NavigationProperty Name="furnizor" Relationship="LabDataModel.OfertaFurnizor" FromRole="oferta" ToRole="furnizor" />
         </EntityType>
         <EntityType Name="plata">
           <Key>
@@ -617,7 +605,7 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
           <Property Name="IdAchizitie" Type="Int32" Nullable="false" />
           <Property Name="Data" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="achizitie" Relationship="Self.PlataAchizitie" FromRole="plata" ToRole="achizitie" />
-          <NavigationProperty Name="furnizor" Relationship="Self.PlataFurnizor" FromRole="plata" ToRole="furnizor" />
+          <NavigationProperty Name="furnizor" Relationship="LabDataModel.PlataFurnizor" FromRole="plata" ToRole="furnizor" />
         </EntityType>
         <EntityType Name="produs">
           <Key>
@@ -689,18 +677,6 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
           <Property Name="Pret" Type="Double" Nullable="false" />
           <Property Name="Cantitate" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="AchizitieFurnizor">
-          <End Role="furnizor" Type="Self.furnizor" Multiplicity="1" />
-          <End Role="achizitie" Type="Self.achizitie" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="furnizor">
-              <PropertyRef Name="IdFurnizor" />
-            </Principal>
-            <Dependent Role="achizitie">
-              <PropertyRef Name="IdFurnizor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="LinieA_Achizitie">
           <End Role="achizitie" Type="Self.achizitie" Multiplicity="1" />
           <End Role="linieachizitie" Type="Self.linieachizitie" Multiplicity="*" />
@@ -770,30 +746,6 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
             </Principal>
             <Dependent Role="vanzari">
               <PropertyRef Name="IdClient" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="OfertaFurnizor">
-          <End Role="furnizor" Type="Self.furnizor" Multiplicity="1" />
-          <End Role="oferta" Type="Self.oferta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="furnizor">
-              <PropertyRef Name="IdFurnizor" />
-            </Principal>
-            <Dependent Role="oferta">
-              <PropertyRef Name="IdFurnizor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="PlataFurnizor">
-          <End Role="furnizor" Type="Self.furnizor" Multiplicity="1" />
-          <End Role="plata" Type="Self.plata" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="furnizor">
-              <PropertyRef Name="IdFurnizor" />
-            </Principal>
-            <Dependent Role="plata">
-              <PropertyRef Name="IdFurnizor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -877,7 +829,6 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
           <EntitySet Name="client" EntityType="Self.client" />
           <EntitySet Name="domeniu" EntityType="Self.domeniu" />
           <EntitySet Name="editura" EntityType="Self.editura" />
-          <EntitySet Name="furnizor" EntityType="Self.furnizor" />
           <EntitySet Name="linieachizitie" EntityType="Self.linieachizitie" />
           <EntitySet Name="linieoferta" EntityType="Self.linieoferta" />
           <EntitySet Name="linievanzare" EntityType="Self.linievanzare" />
@@ -888,10 +839,6 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
           <EntitySet Name="utilizator" EntityType="Self.utilizator" />
           <EntitySet Name="vanzari" EntityType="Self.vanzari" />
           <EntitySet Name="cartedetaliu" EntityType="Self.cartedetaliu" />
-          <AssociationSet Name="AchizitieFurnizor" Association="Self.AchizitieFurnizor">
-            <End Role="furnizor" EntitySet="furnizor" />
-            <End Role="achizitie" EntitySet="achizitie" />
-          </AssociationSet>
           <AssociationSet Name="LinieA_Achizitie" Association="Self.LinieA_Achizitie">
             <End Role="achizitie" EntitySet="achizitie" />
             <End Role="linieachizitie" EntitySet="linieachizitie" />
@@ -915,14 +862,6 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
           <AssociationSet Name="VanzariClient" Association="Self.VanzariClient">
             <End Role="client" EntitySet="client" />
             <End Role="vanzari" EntitySet="vanzari" />
-          </AssociationSet>
-          <AssociationSet Name="OfertaFurnizor" Association="Self.OfertaFurnizor">
-            <End Role="furnizor" EntitySet="furnizor" />
-            <End Role="oferta" EntitySet="oferta" />
-          </AssociationSet>
-          <AssociationSet Name="PlataFurnizor" Association="Self.PlataFurnizor">
-            <End Role="furnizor" EntitySet="furnizor" />
-            <End Role="plata" EntitySet="plata" />
           </AssociationSet>
           <AssociationSet Name="LinieA_Produs" Association="Self.LinieA_Produs">
             <End Role="produs" EntitySet="produs" />
@@ -948,7 +887,70 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
             <End Role="tipprodus" EntitySet="tipprodus" />
             <End Role="produs" EntitySet="produs" />
           </AssociationSet>
+          <EntitySet Name="furnizor" EntityType="LabDataModel.furnizor" />
+          <AssociationSet Name="AchizitieFurnizor" Association="LabDataModel.AchizitieFurnizor">
+            <End Role="furnizor" EntitySet="furnizor" />
+            <End Role="achizitie" EntitySet="achizitie" />
+          </AssociationSet>
+          <AssociationSet Name="OfertaFurnizor" Association="LabDataModel.OfertaFurnizor">
+            <End Role="furnizor" EntitySet="furnizor" />
+            <End Role="oferta" EntitySet="oferta" />
+          </AssociationSet>
+          <AssociationSet Name="PlataFurnizor" Association="LabDataModel.PlataFurnizor">
+            <End Role="furnizor" EntitySet="furnizor" />
+            <End Role="plata" EntitySet="plata" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="furnizor">
+          <Key>
+            <PropertyRef Name="IdFurnizor" />
+          </Key>
+          <Property Name="IdFurnizor" Type="Int32" Nullable="false" />
+          <Property Name="Nume" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CUI" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sold" Type="Double" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefon" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="achizitie" Relationship="LabDataModel.AchizitieFurnizor" FromRole="furnizor" ToRole="achizitie" />
+          <NavigationProperty Name="oferta" Relationship="LabDataModel.OfertaFurnizor" FromRole="furnizor" ToRole="oferta" />
+          <NavigationProperty Name="plata" Relationship="LabDataModel.PlataFurnizor" FromRole="furnizor" ToRole="plata" />
+        </EntityType>
+        <Association Name="AchizitieFurnizor">
+          <End Type="LabDataModel.furnizor" Role="furnizor" Multiplicity="1" />
+          <End Type="LabDataModel.achizitie" Role="achizitie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="furnizor">
+              <PropertyRef Name="IdFurnizor" />
+            </Principal>
+            <Dependent Role="achizitie">
+              <PropertyRef Name="IdFurnizor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OfertaFurnizor">
+          <End Type="LabDataModel.furnizor" Role="furnizor" Multiplicity="1" />
+          <End Type="LabDataModel.oferta" Role="oferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="furnizor">
+              <PropertyRef Name="IdFurnizor" />
+            </Principal>
+            <Dependent Role="oferta">
+              <PropertyRef Name="IdFurnizor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlataFurnizor">
+          <End Type="LabDataModel.furnizor" Role="furnizor" Multiplicity="1" />
+          <End Type="LabDataModel.plata" Role="plata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="furnizor">
+              <PropertyRef Name="IdFurnizor" />
+            </Principal>
+            <Dependent Role="plata">
+              <PropertyRef Name="IdFurnizor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1023,17 +1025,6 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
               <MappingFragment StoreEntitySet="editura">
                 <ScalarProperty Name="IdEditura" ColumnName="IdEditura" />
                 <ScalarProperty Name="Nume" ColumnName="Nume" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="furnizor">
-            <EntityTypeMapping TypeName="LabDataModel.furnizor">
-              <MappingFragment StoreEntitySet="furnizor">
-                <ScalarProperty Name="IdFurnizor" ColumnName="IdFurnizor" />
-                <ScalarProperty Name="Nume" ColumnName="Nume" />
-                <ScalarProperty Name="CUI" ColumnName="CUI" />
-                <ScalarProperty Name="Sold" ColumnName="Sold" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1141,6 +1132,18 @@ FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
                 <ScalarProperty Name="Autor" ColumnName="Autor" />
                 <ScalarProperty Name="Domeniu" ColumnName="Domeniu" />
                 <ScalarProperty Name="Editura" ColumnName="Editura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="furnizor">
+            <EntityTypeMapping TypeName="LabDataModel.furnizor">
+              <MappingFragment StoreEntitySet="furnizor">
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Sold" ColumnName="Sold" />
+                <ScalarProperty Name="CUI" ColumnName="CUI" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="IdFurnizor" ColumnName="IdFurnizor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

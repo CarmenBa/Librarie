@@ -32,7 +32,6 @@ namespace Program_Librarie.DB
         public virtual DbSet<client> client { get; set; }
         public virtual DbSet<domeniu> domeniu { get; set; }
         public virtual DbSet<editura> editura { get; set; }
-        public virtual DbSet<furnizor> furnizor { get; set; }
         public virtual DbSet<linieachizitie> linieachizitie { get; set; }
         public virtual DbSet<linieoferta> linieoferta { get; set; }
         public virtual DbSet<linievanzare> linievanzare { get; set; }
@@ -43,5 +42,6 @@ namespace Program_Librarie.DB
         public virtual DbSet<utilizator> utilizator { get; set; }
         public virtual DbSet<vanzari> vanzari { get; set; }
         public virtual DbSet<cartedetaliu> cartedetaliu { get; set; }
+        public virtual DbSet<furnizor> furnizor { get; set; }
     }
 }

@@ -72,7 +72,7 @@ namespace Program_Librarie
                 client.Sex = currentEdit.Sex;
                 client.Email = currentEdit.Email;
                 lb.SaveChanges();
-                UpdateGrid("Modificat");
+                UpdateGrid("Modifica");
             }
         }
 
@@ -135,7 +135,6 @@ namespace Program_Librarie
             };
             return newEdit;
         }
-
     }
 }
 

@@ -38,7 +38,11 @@ namespace Program_Librarie
             var currentEdit = GetEditItem();
             using (LabDataContext lb = new LabDataContext())
             {
-                if (!lb.domeniu.Any(x => x.Domeniu1.Equals(currentEdit.Domeniu, StringComparison.OrdinalIgnoreCase)))
+                if (lb.domeniu.Any(x => x.Domeniu1.Equals(currentEdit.Domeniu, StringComparison.OrdinalIgnoreCase)))
+                {
+                    MessageBox.Show("Exista deja domeniu cu acest nume.");
+                }
+                else
                 {
                     var newDomeniu = new domeniu()
                     {
@@ -46,11 +50,7 @@ namespace Program_Librarie
                     };
                     lb.domeniu.Add(newDomeniu);
                     lb.SaveChanges();
-                    UpdateGrid("Adauga");
-                }
-                else
-                {
-                    MessageBox.Show("Exista deja domeniu cu acest nume.");
+                    UpdateGrid("Adauga"); 
                 }
             }
 
@@ -64,7 +64,7 @@ namespace Program_Librarie
                 var domeniu = lb.domeniu.FirstOrDefault(x => x.IdDomeniu == currentEdit.Id);
                 domeniu.Domeniu1 = currentEdit.Domeniu;
                 lb.SaveChanges();
-                UpdateGrid("Modificat");
+                UpdateGrid("Modifica");
             }
         }
 
@@ -73,16 +73,16 @@ namespace Program_Librarie
             var currentEdit = GetEditItem();
             using (LabDataContext lb = new LabDataContext())
             {
-                if (!lb.carte.Any(x => x.IdAutor == currentEdit.Id))
+                if (lb.carte.Any(x => x.IdAutor == currentEdit.Id))
+                {
+                    MessageBox.Show("Domeniul nu poate fi sters.\r\nExista carti care folosesc acest domeniu.");
+                }
+                else
                 {
                     var domeniu = lb.domeniu.FirstOrDefault(x => x.IdDomeniu == currentEdit.Id);
                     lb.domeniu.Remove(domeniu);
                     lb.SaveChanges();
                     UpdateGrid("Sterge");
-                }
-                else
-                {
-                    MessageBox.Show("Exista carti care folosesc acest domeniu. Nu puteti sterge domeniul.");
                 }
             }
         }
