@@ -457,7 +457,6 @@
             this.tableAdapterManager.domeniuTableAdapter = null;
             this.tableAdapterManager.edituraTableAdapter = null;
             this.tableAdapterManager.furnizorTableAdapter = null;
-            this.tableAdapterManager.linieachizitieTableAdapter = null;
             this.tableAdapterManager.linievanzareTableAdapter = null;
             this.tableAdapterManager.produsTableAdapter = null;
             this.tableAdapterManager.tipprodusTableAdapter = null;
