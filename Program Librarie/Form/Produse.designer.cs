@@ -53,7 +53,6 @@
             this.autoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.edituriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cărțiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.echipamenteDeBiroticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cliențiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.furnizoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rapoarteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,6 +90,8 @@
             this.tbCantitate = new System.Windows.Forms.NumericUpDown();
             this.tbAn = new System.Windows.Forms.NumericUpDown();
             this.tbNrPagini = new System.Windows.Forms.NumericUpDown();
+            this.furnizorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.furnizorTableAdapter = new Program_Librarie.LibrarieDataSetTableAdapters.furnizorTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cartedetaliuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).BeginInit();
@@ -99,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbCantitate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbNrPagini)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furnizorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAutor
@@ -317,7 +319,6 @@
             // 
             this.adaugăToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cărțiToolStripMenuItem,
-            this.echipamenteDeBiroticaToolStripMenuItem,
             this.cliențiToolStripMenuItem,
             this.furnizoriToolStripMenuItem});
             this.adaugăToolStripMenuItem.Name = "adaugăToolStripMenuItem";
@@ -331,7 +332,7 @@
             this.edituriToolStripMenuItem,
             this.cărțiToolStripMenuItem1});
             this.cărțiToolStripMenuItem.Name = "cărțiToolStripMenuItem";
-            this.cărțiToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.cărțiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cărțiToolStripMenuItem.Text = "Cărți și despre cărți";
             // 
             // autoriToolStripMenuItem
@@ -352,22 +353,16 @@
             this.cărțiToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
             this.cărțiToolStripMenuItem1.Text = "Cărți";
             // 
-            // echipamenteDeBiroticaToolStripMenuItem
-            // 
-            this.echipamenteDeBiroticaToolStripMenuItem.Name = "echipamenteDeBiroticaToolStripMenuItem";
-            this.echipamenteDeBiroticaToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.echipamenteDeBiroticaToolStripMenuItem.Text = "Echipamente de birotica";
-            // 
             // cliențiToolStripMenuItem
             // 
             this.cliențiToolStripMenuItem.Name = "cliențiToolStripMenuItem";
-            this.cliențiToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.cliențiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cliențiToolStripMenuItem.Text = "Clienți";
             // 
             // furnizoriToolStripMenuItem
             // 
             this.furnizoriToolStripMenuItem.Name = "furnizoriToolStripMenuItem";
-            this.furnizoriToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.furnizoriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.furnizoriToolStripMenuItem.Text = "Furnizori";
             // 
             // rapoarteToolStripMenuItem
@@ -702,6 +697,15 @@
             this.tbNrPagini.Size = new System.Drawing.Size(219, 26);
             this.tbNrPagini.TabIndex = 69;
             // 
+            // furnizorBindingSource
+            // 
+            this.furnizorBindingSource.DataMember = "furnizor";
+            this.furnizorBindingSource.DataSource = this.librarieDataSet;
+            // 
+            // furnizorTableAdapter
+            // 
+            this.furnizorTableAdapter.ClearBeforeFill = true;
+            // 
             // Produse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -751,6 +755,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbCantitate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbNrPagini)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furnizorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -782,7 +787,6 @@
         private System.Windows.Forms.ToolStripMenuItem autoriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem edituriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cărțiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem echipamenteDeBiroticaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cliențiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem furnizoriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rapoarteToolStripMenuItem;
@@ -820,5 +824,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn autorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn domeniuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn edituraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource furnizorBindingSource;
+        private LibrarieDataSetTableAdapters.furnizorTableAdapter furnizorTableAdapter;
     }
 }

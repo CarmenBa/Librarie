@@ -45,21 +45,21 @@
             this.solduriFurnizoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajutorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnModifica = new System.Windows.Forms.Button();
+            this.btnStergere = new System.Windows.Forms.Button();
+            this.btnAdaugare = new System.Windows.Forms.Button();
             this.tbNume = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.librarieDataSet = new Program_Librarie.LibrarieDataSet();
-            this.edituraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.edituraTableAdapter = new Program_Librarie.LibrarieDataSetTableAdapters.edituraTableAdapter();
             this.idEdituraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edituraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.librarieDataSet = new Program_Librarie.LibrarieDataSet();
+            this.edituraTableAdapter = new Program_Librarie.LibrarieDataSetTableAdapters.edituraTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edituraBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -181,41 +181,44 @@
             this.ajutorToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.ajutorToolStripMenuItem.Text = "Ajutor";
             // 
-            // button1
+            // btnModifica
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(408, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 47);
-            this.button1.TabIndex = 90;
-            this.button1.Text = "Modifică";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnModifica.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnModifica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifica.Location = new System.Drawing.Point(408, 152);
+            this.btnModifica.Name = "btnModifica";
+            this.btnModifica.Size = new System.Drawing.Size(226, 47);
+            this.btnModifica.TabIndex = 90;
+            this.btnModifica.Text = "Modifică";
+            this.btnModifica.UseVisualStyleBackColor = false;
+            this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
             // 
-            // button2
+            // btnStergere
             // 
-            this.button2.BackColor = System.Drawing.Color.IndianRed;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(408, 258);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(226, 47);
-            this.button2.TabIndex = 89;
-            this.button2.Text = "Șterge";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnStergere.BackColor = System.Drawing.Color.IndianRed;
+            this.btnStergere.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStergere.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStergere.Location = new System.Drawing.Point(408, 258);
+            this.btnStergere.Name = "btnStergere";
+            this.btnStergere.Size = new System.Drawing.Size(226, 47);
+            this.btnStergere.TabIndex = 89;
+            this.btnStergere.Text = "Șterge";
+            this.btnStergere.UseVisualStyleBackColor = false;
+            this.btnStergere.Click += new System.EventHandler(this.btnStergere_Click);
             // 
-            // button3
+            // btnAdaugare
             // 
-            this.button3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(408, 205);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(226, 47);
-            this.button3.TabIndex = 88;
-            this.button3.Text = "Adaugă";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAdaugare.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAdaugare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdaugare.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdaugare.Location = new System.Drawing.Point(408, 205);
+            this.btnAdaugare.Name = "btnAdaugare";
+            this.btnAdaugare.Size = new System.Drawing.Size(226, 47);
+            this.btnAdaugare.TabIndex = 88;
+            this.btnAdaugare.Text = "Adaugă";
+            this.btnAdaugare.UseVisualStyleBackColor = false;
+            this.btnAdaugare.Click += new System.EventHandler(this.btnAdaugare_Click);
             // 
             // tbNume
             // 
@@ -233,9 +236,9 @@
             this.label1.Location = new System.Drawing.Point(403, 95);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 24);
+            this.label1.Size = new System.Drawing.Size(76, 24);
             this.label1.TabIndex = 86;
-            this.label1.Text = "Domeniu";
+            this.label1.Text = "Editura";
             // 
             // dataGridView1
             // 
@@ -253,20 +256,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(367, 265);
             this.dataGridView1.TabIndex = 85;
             // 
-            // librarieDataSet
-            // 
-            this.librarieDataSet.DataSetName = "LibrarieDataSet";
-            this.librarieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // edituraBindingSource
-            // 
-            this.edituraBindingSource.DataMember = "editura";
-            this.edituraBindingSource.DataSource = this.librarieDataSet;
-            // 
-            // edituraTableAdapter
-            // 
-            this.edituraTableAdapter.ClearBeforeFill = true;
-            // 
             // idEdituraDataGridViewTextBoxColumn
             // 
             this.idEdituraDataGridViewTextBoxColumn.DataPropertyName = "IdEditura";
@@ -283,15 +272,29 @@
             this.numeDataGridViewTextBoxColumn.ReadOnly = true;
             this.numeDataGridViewTextBoxColumn.Width = 250;
             // 
+            // edituraBindingSource
+            // 
+            this.edituraBindingSource.DataMember = "editura";
+            this.edituraBindingSource.DataSource = this.librarieDataSet;
+            // 
+            // librarieDataSet
+            // 
+            this.librarieDataSet.DataSetName = "LibrarieDataSet";
+            this.librarieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // edituraTableAdapter
+            // 
+            this.edituraTableAdapter.ClearBeforeFill = true;
+            // 
             // Edituri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(655, 320);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnModifica);
+            this.Controls.Add(this.btnStergere);
+            this.Controls.Add(this.btnAdaugare);
             this.Controls.Add(this.tbNume);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -303,8 +306,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edituraBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,9 +330,9 @@
         private System.Windows.Forms.ToolStripMenuItem solduriFurnizoriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajutorToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnModifica;
+        private System.Windows.Forms.Button btnStergere;
+        private System.Windows.Forms.Button btnAdaugare;
         private System.Windows.Forms.TextBox tbNume;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;

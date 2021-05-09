@@ -42,13 +42,6 @@ namespace Program_Librarie
             }
         }
 
-        private void echipamenteDeBiroticaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Birotica m = new Birotica();
-            m.Show();
-            this.Close();
-        }
-
         private void ajutorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Pentru probleme consultati manualul de instructiuni sau contactati-ne la adresa SUPORT@gmail.com!");
@@ -64,7 +57,7 @@ namespace Program_Librarie
                 IdSelected = rowDetaliu.Id;
                 cmbTipProdus.SelectedIndex = cmbTipProdus.Items.IndexOf(rowDetaliu.Produs);
                 tbTitlu.Text = rowDetaliu.Titlu;
-                tbDescriere.SelectedText = rowDetaliu.Descriere;
+                tbDescriere.Text = rowDetaliu.Descriere;
                 tbPret.Value = (decimal)rowDetaliu.Pret;
                 tbCantitate.Value = rowDetaliu.Cantitate;
                 if (rowDetaliu.Produs.Equals("Carte"))

@@ -40,11 +40,11 @@ namespace Program_Librarie
             {
                 if (!lb.domeniu.Any(x => x.Domeniu1.Equals(currentEdit.Domeniu, StringComparison.OrdinalIgnoreCase)))
                 {
-                    var newAutor = new domeniu()
+                    var newDomeniu = new domeniu()
                     {
                         Domeniu1 = currentEdit.Domeniu,
                     };
-                    lb.domeniu.Add(newAutor);
+                    lb.domeniu.Add(newDomeniu);
                     lb.SaveChanges();
                     UpdateGrid("Adauga");
                 }

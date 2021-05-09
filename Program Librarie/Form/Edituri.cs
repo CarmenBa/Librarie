@@ -46,7 +46,11 @@ namespace Program_Librarie
             var currentEdit = GetEditItem();
             using (LabDataContext lb = new LabDataContext())
             {
-                if (!lb.editura.Any(x => x.Nume.Equals(currentEdit.Nume, StringComparison.OrdinalIgnoreCase)))
+                if (lb.editura.Any(x => x.Nume.Equals(currentEdit.Nume, StringComparison.OrdinalIgnoreCase)))
+                {
+                    MessageBox.Show("Exista deja editura cu acest nume.");
+                }
+                else
                 {
                     var newEditura = new editura()
                     {
@@ -55,10 +59,6 @@ namespace Program_Librarie
                     lb.editura.Add(newEditura);
                     lb.SaveChanges();
                     UpdateGrid("Adauga");
-                }
-                else
-                {
-                    MessageBox.Show("Exista deja editura cu acest nume.");
                 }
             }
         }
