@@ -1,0 +1,1170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LabDataModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="achizitie">
+          <Key>
+            <PropertyRef Name="IdAchizitie" />
+          </Key>
+          <Property Name="IdAchizitie" Type="int" Nullable="false" />
+          <Property Name="IdFurnizor" Type="int" Nullable="false" />
+          <Property Name="NrDocument" Type="int" Nullable="false" />
+          <Property Name="SerieDocument" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="autor">
+          <Key>
+            <PropertyRef Name="IdAutor" />
+          </Key>
+          <Property Name="IdAutor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nume" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="birotica">
+          <Key>
+            <PropertyRef Name="IdBirotica" />
+          </Key>
+          <Property Name="IdBirotica" Type="int" Nullable="false" />
+          <Property Name="Denumire" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descriere" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="carte">
+          <Key>
+            <PropertyRef Name="IdCarte" />
+          </Key>
+          <Property Name="IdCarte" Type="int" Nullable="false" />
+          <Property Name="ISBN" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="Titlu" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descriere" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IdEditura" Type="int" Nullable="false" />
+          <Property Name="An" Type="int" Nullable="false" />
+          <Property Name="NrPagini" Type="int" Nullable="false" />
+          <Property Name="Locatie" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="IdAutor" Type="int" Nullable="false" />
+          <Property Name="IdDomeniu" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="IdClient" />
+          </Key>
+          <Property Name="IdClient" Type="int" Nullable="false" />
+          <Property Name="Nume" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Varsta" Type="int" Nullable="false" />
+          <Property Name="Sex" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="domeniu">
+          <Key>
+            <PropertyRef Name="IdDomeniu" />
+          </Key>
+          <Property Name="IdDomeniu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Domeniu" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="editura">
+          <Key>
+            <PropertyRef Name="IdEditura" />
+          </Key>
+          <Property Name="IdEditura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nume" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="furnizor">
+          <Key>
+            <PropertyRef Name="IdFurnizor" />
+          </Key>
+          <Property Name="IdFurnizor" Type="int" Nullable="false" />
+          <Property Name="Nume" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CUI" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Sold" Type="double" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="linieachizitie">
+          <Key>
+            <PropertyRef Name="IdAchizitie" />
+            <PropertyRef Name="IdProdus" />
+          </Key>
+          <Property Name="IdAchizitie" Type="int" Nullable="false" />
+          <Property Name="IdProdus" Type="int" Nullable="false" />
+          <Property Name="Cantitate" Type="int" Nullable="false" />
+          <Property Name="Pret" Type="double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="linieoferta">
+          <Key>
+            <PropertyRef Name="IdOferta" />
+            <PropertyRef Name="IdProdus" />
+          </Key>
+          <Property Name="IdOferta" Type="int" Nullable="false" />
+          <Property Name="IdProdus" Type="int" Nullable="false" />
+          <Property Name="PretFurnizor" Type="double" Nullable="false" />
+          <Property Name="Cantitate" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="linievanzare">
+          <Key>
+            <PropertyRef Name="IdVanzare" />
+            <PropertyRef Name="IdProdus" />
+          </Key>
+          <Property Name="IdVanzare" Type="int" Nullable="false" />
+          <Property Name="IdProdus" Type="int" Nullable="false" />
+          <Property Name="Cantitate" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="oferta">
+          <Key>
+            <PropertyRef Name="IdOferta" />
+          </Key>
+          <Property Name="IdOferta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataExpirare" Type="date" Nullable="false" />
+          <Property Name="IdFurnizor" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="plata">
+          <Key>
+            <PropertyRef Name="IdPlata" />
+          </Key>
+          <Property Name="IdPlata" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SerieDocument" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NrDocument" Type="int" Nullable="false" />
+          <Property Name="Suma" Type="double" Nullable="false" />
+          <Property Name="IdFurnizor" Type="int" Nullable="false" />
+          <Property Name="IdAchizitie" Type="int" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="produs">
+          <Key>
+            <PropertyRef Name="IdProdus" />
+          </Key>
+          <Property Name="IdProdus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTipProdus" Type="int" Nullable="false" />
+          <Property Name="Produs" Type="int" Nullable="false" />
+          <Property Name="Pret" Type="double" Nullable="false" />
+          <Property Name="Cantitate" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipprodus">
+          <Key>
+            <PropertyRef Name="IdTipProdus" />
+          </Key>
+          <Property Name="IdTipProdus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TipProdus" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="utilizator">
+          <Key>
+            <PropertyRef Name="IdUtilizator" />
+          </Key>
+          <Property Name="IdUtilizator" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Parola" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="GradSecuritate" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vanzari">
+          <Key>
+            <PropertyRef Name="IdVanzare" />
+          </Key>
+          <Property Name="IdVanzare" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdClient" Type="int" Nullable="false" />
+          <Property Name="Data" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'def.aplicatie_librarie.cartedetaliu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="cartedetaliu">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Produs" />
+            <PropertyRef Name="Titlu" />
+            <PropertyRef Name="Descriere" />
+            <PropertyRef Name="Pret" />
+            <PropertyRef Name="Cantitate" />
+            <PropertyRef Name="ISBN" />
+            <PropertyRef Name="An" />
+            <PropertyRef Name="NrPagini" />
+            <PropertyRef Name="Locatie" />
+            <PropertyRef Name="Autor" />
+            <PropertyRef Name="Domeniu" />
+            <PropertyRef Name="Editura" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Produs" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Titlu" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descriere" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Pret" Type="double" Nullable="false" />
+          <Property Name="Cantitate" Type="int" Nullable="false" />
+          <Property Name="ISBN" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="An" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="NrPagini" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="Locatie" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="Autor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Domeniu" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Editura" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="AchizitieFurnizor">
+          <End Role="furnizor" Type="Self.furnizor" Multiplicity="1" />
+          <End Role="achizitie" Type="Self.achizitie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="furnizor">
+              <PropertyRef Name="IdFurnizor" />
+            </Principal>
+            <Dependent Role="achizitie">
+              <PropertyRef Name="IdFurnizor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CarteAutor">
+          <End Role="autor" Type="Self.autor" Multiplicity="1" />
+          <End Role="carte" Type="Self.carte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="autor">
+              <PropertyRef Name="IdAutor" />
+            </Principal>
+            <Dependent Role="carte">
+              <PropertyRef Name="IdAutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CarteDomeniu">
+          <End Role="domeniu" Type="Self.domeniu" Multiplicity="1" />
+          <End Role="carte" Type="Self.carte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="domeniu">
+              <PropertyRef Name="IdDomeniu" />
+            </Principal>
+            <Dependent Role="carte">
+              <PropertyRef Name="IdDomeniu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CarteEditura">
+          <End Role="editura" Type="Self.editura" Multiplicity="1" />
+          <End Role="carte" Type="Self.carte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="editura">
+              <PropertyRef Name="IdEditura" />
+            </Principal>
+            <Dependent Role="carte">
+              <PropertyRef Name="IdEditura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieA-Achizitie">
+          <End Role="achizitie" Type="Self.achizitie" Multiplicity="1" />
+          <End Role="linieachizitie" Type="Self.linieachizitie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="achizitie">
+              <PropertyRef Name="IdAchizitie" />
+            </Principal>
+            <Dependent Role="linieachizitie">
+              <PropertyRef Name="IdAchizitie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieA-Produs">
+          <End Role="produs" Type="Self.produs" Multiplicity="1" />
+          <End Role="linieachizitie" Type="Self.linieachizitie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produs">
+              <PropertyRef Name="IdProdus" />
+            </Principal>
+            <Dependent Role="linieachizitie">
+              <PropertyRef Name="IdProdus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieO-Oferta">
+          <End Role="oferta" Type="Self.oferta" Multiplicity="1" />
+          <End Role="linieoferta" Type="Self.linieoferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oferta">
+              <PropertyRef Name="IdOferta" />
+            </Principal>
+            <Dependent Role="linieoferta">
+              <PropertyRef Name="IdOferta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieO-Produs">
+          <End Role="produs" Type="Self.produs" Multiplicity="1" />
+          <End Role="linieoferta" Type="Self.linieoferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produs">
+              <PropertyRef Name="IdProdus" />
+            </Principal>
+            <Dependent Role="linieoferta">
+              <PropertyRef Name="IdProdus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieV-Produs">
+          <End Role="produs" Type="Self.produs" Multiplicity="1" />
+          <End Role="linievanzare" Type="Self.linievanzare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produs">
+              <PropertyRef Name="IdProdus" />
+            </Principal>
+            <Dependent Role="linievanzare">
+              <PropertyRef Name="IdProdus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieV-Vanzare">
+          <End Role="vanzari" Type="Self.vanzari" Multiplicity="1" />
+          <End Role="linievanzare" Type="Self.linievanzare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vanzari">
+              <PropertyRef Name="IdVanzare" />
+            </Principal>
+            <Dependent Role="linievanzare">
+              <PropertyRef Name="IdVanzare" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OfertaFurnizor">
+          <End Role="furnizor" Type="Self.furnizor" Multiplicity="1" />
+          <End Role="oferta" Type="Self.oferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="furnizor">
+              <PropertyRef Name="IdFurnizor" />
+            </Principal>
+            <Dependent Role="oferta">
+              <PropertyRef Name="IdFurnizor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlataAchizitie">
+          <End Role="achizitie" Type="Self.achizitie" Multiplicity="1" />
+          <End Role="plata" Type="Self.plata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="achizitie">
+              <PropertyRef Name="IdAchizitie" />
+            </Principal>
+            <Dependent Role="plata">
+              <PropertyRef Name="IdAchizitie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlataFurnizor">
+          <End Role="furnizor" Type="Self.furnizor" Multiplicity="1" />
+          <End Role="plata" Type="Self.plata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="furnizor">
+              <PropertyRef Name="IdFurnizor" />
+            </Principal>
+            <Dependent Role="plata">
+              <PropertyRef Name="IdFurnizor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="produs_ibfk_1">
+          <End Role="tipprodus" Type="Self.tipprodus" Multiplicity="1" />
+          <End Role="produs" Type="Self.produs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipprodus">
+              <PropertyRef Name="IdTipProdus" />
+            </Principal>
+            <Dependent Role="produs">
+              <PropertyRef Name="IdTipProdus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VanzariClient">
+          <End Role="client" Type="Self.client" Multiplicity="1" />
+          <End Role="vanzari" Type="Self.vanzari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="IdClient" />
+            </Principal>
+            <Dependent Role="vanzari">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LabDataModelStoreContainer">
+          <EntitySet Name="achizitie" EntityType="Self.achizitie" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="autor" EntityType="Self.autor" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="birotica" EntityType="Self.birotica" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="carte" EntityType="Self.carte" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="client" EntityType="Self.client" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="domeniu" EntityType="Self.domeniu" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="editura" EntityType="Self.editura" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="furnizor" EntityType="Self.furnizor" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="linieachizitie" EntityType="Self.linieachizitie" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="linieoferta" EntityType="Self.linieoferta" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="linievanzare" EntityType="Self.linievanzare" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="oferta" EntityType="Self.oferta" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="plata" EntityType="Self.plata" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="produs" EntityType="Self.produs" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="tipprodus" EntityType="Self.tipprodus" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="utilizator" EntityType="Self.utilizator" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="vanzari" EntityType="Self.vanzari" Schema="aplicatie_librarie" store:Type="Tables" />
+          <EntitySet Name="cartedetaliu" EntityType="Self.cartedetaliu" store:Type="Views" store:Schema="aplicatie_librarie">
+            <DefiningQuery>SELECT
+`cartedetaliu`.`Id`, 
+`cartedetaliu`.`Produs`, 
+`cartedetaliu`.`Titlu`, 
+`cartedetaliu`.`Descriere`, 
+`cartedetaliu`.`Pret`, 
+`cartedetaliu`.`Cantitate`, 
+`cartedetaliu`.`ISBN`, 
+`cartedetaliu`.`An`, 
+`cartedetaliu`.`NrPagini`, 
+`cartedetaliu`.`Locatie`, 
+`cartedetaliu`.`Autor`, 
+`cartedetaliu`.`Domeniu`, 
+`cartedetaliu`.`Editura`
+FROM `cartedetaliu` AS `cartedetaliu`</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="AchizitieFurnizor" Association="Self.AchizitieFurnizor">
+            <End Role="furnizor" EntitySet="furnizor" />
+            <End Role="achizitie" EntitySet="achizitie" />
+          </AssociationSet>
+          <AssociationSet Name="CarteAutor" Association="Self.CarteAutor">
+            <End Role="autor" EntitySet="autor" />
+            <End Role="carte" EntitySet="carte" />
+          </AssociationSet>
+          <AssociationSet Name="CarteDomeniu" Association="Self.CarteDomeniu">
+            <End Role="domeniu" EntitySet="domeniu" />
+            <End Role="carte" EntitySet="carte" />
+          </AssociationSet>
+          <AssociationSet Name="CarteEditura" Association="Self.CarteEditura">
+            <End Role="editura" EntitySet="editura" />
+            <End Role="carte" EntitySet="carte" />
+          </AssociationSet>
+          <AssociationSet Name="LinieA-Achizitie" Association="Self.LinieA-Achizitie">
+            <End Role="achizitie" EntitySet="achizitie" />
+            <End Role="linieachizitie" EntitySet="linieachizitie" />
+          </AssociationSet>
+          <AssociationSet Name="LinieA-Produs" Association="Self.LinieA-Produs">
+            <End Role="produs" EntitySet="produs" />
+            <End Role="linieachizitie" EntitySet="linieachizitie" />
+          </AssociationSet>
+          <AssociationSet Name="LinieO-Oferta" Association="Self.LinieO-Oferta">
+            <End Role="oferta" EntitySet="oferta" />
+            <End Role="linieoferta" EntitySet="linieoferta" />
+          </AssociationSet>
+          <AssociationSet Name="LinieO-Produs" Association="Self.LinieO-Produs">
+            <End Role="produs" EntitySet="produs" />
+            <End Role="linieoferta" EntitySet="linieoferta" />
+          </AssociationSet>
+          <AssociationSet Name="LinieV-Produs" Association="Self.LinieV-Produs">
+            <End Role="produs" EntitySet="produs" />
+            <End Role="linievanzare" EntitySet="linievanzare" />
+          </AssociationSet>
+          <AssociationSet Name="LinieV-Vanzare" Association="Self.LinieV-Vanzare">
+            <End Role="vanzari" EntitySet="vanzari" />
+            <End Role="linievanzare" EntitySet="linievanzare" />
+          </AssociationSet>
+          <AssociationSet Name="OfertaFurnizor" Association="Self.OfertaFurnizor">
+            <End Role="furnizor" EntitySet="furnizor" />
+            <End Role="oferta" EntitySet="oferta" />
+          </AssociationSet>
+          <AssociationSet Name="PlataAchizitie" Association="Self.PlataAchizitie">
+            <End Role="achizitie" EntitySet="achizitie" />
+            <End Role="plata" EntitySet="plata" />
+          </AssociationSet>
+          <AssociationSet Name="PlataFurnizor" Association="Self.PlataFurnizor">
+            <End Role="furnizor" EntitySet="furnizor" />
+            <End Role="plata" EntitySet="plata" />
+          </AssociationSet>
+          <AssociationSet Name="produs_ibfk_1" Association="Self.produs_ibfk_1">
+            <End Role="tipprodus" EntitySet="tipprodus" />
+            <End Role="produs" EntitySet="produs" />
+          </AssociationSet>
+          <AssociationSet Name="VanzariClient" Association="Self.VanzariClient">
+            <End Role="client" EntitySet="client" />
+            <End Role="vanzari" EntitySet="vanzari" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LabDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="achizitie">
+          <Key>
+            <PropertyRef Name="IdAchizitie" />
+          </Key>
+          <Property Name="IdAchizitie" Type="Int32" Nullable="false" />
+          <Property Name="IdFurnizor" Type="Int32" Nullable="false" />
+          <Property Name="NrDocument" Type="Int32" Nullable="false" />
+          <Property Name="SerieDocument" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="furnizor" Relationship="Self.AchizitieFurnizor" FromRole="achizitie" ToRole="furnizor" />
+          <NavigationProperty Name="linieachizitie" Relationship="Self.LinieA_Achizitie" FromRole="achizitie" ToRole="linieachizitie" />
+          <NavigationProperty Name="plata" Relationship="Self.PlataAchizitie" FromRole="achizitie" ToRole="plata" />
+        </EntityType>
+        <EntityType Name="autor">
+          <Key>
+            <PropertyRef Name="IdAutor" />
+          </Key>
+          <Property Name="IdAutor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="carte" Relationship="Self.CarteAutor" FromRole="autor" ToRole="carte" />
+        </EntityType>
+        <EntityType Name="birotica">
+          <Key>
+            <PropertyRef Name="IdBirotica" />
+          </Key>
+          <Property Name="IdBirotica" Type="Int32" Nullable="false" />
+          <Property Name="Denumire" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descriere" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="carte">
+          <Key>
+            <PropertyRef Name="IdCarte" />
+          </Key>
+          <Property Name="IdCarte" Type="Int32" Nullable="false" />
+          <Property Name="ISBN" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Titlu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descriere" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdEditura" Type="Int32" Nullable="false" />
+          <Property Name="An" Type="Int32" Nullable="false" />
+          <Property Name="NrPagini" Type="Int32" Nullable="false" />
+          <Property Name="Locatie" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IdAutor" Type="Int32" Nullable="false" />
+          <Property Name="IdDomeniu" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="autor" Relationship="Self.CarteAutor" FromRole="carte" ToRole="autor" />
+          <NavigationProperty Name="domeniu" Relationship="Self.CarteDomeniu" FromRole="carte" ToRole="domeniu" />
+          <NavigationProperty Name="editura" Relationship="Self.CarteEditura" FromRole="carte" ToRole="editura" />
+        </EntityType>
+        <EntityType Name="client">
+          <Key>
+            <PropertyRef Name="IdClient" />
+          </Key>
+          <Property Name="IdClient" Type="Int32" Nullable="false" />
+          <Property Name="Nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Varsta" Type="Int32" Nullable="false" />
+          <Property Name="Sex" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="vanzari" Relationship="Self.VanzariClient" FromRole="client" ToRole="vanzari" />
+        </EntityType>
+        <EntityType Name="domeniu">
+          <Key>
+            <PropertyRef Name="IdDomeniu" />
+          </Key>
+          <Property Name="IdDomeniu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Domeniu1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="carte" Relationship="Self.CarteDomeniu" FromRole="domeniu" ToRole="carte" />
+        </EntityType>
+        <EntityType Name="editura">
+          <Key>
+            <PropertyRef Name="IdEditura" />
+          </Key>
+          <Property Name="IdEditura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="carte" Relationship="Self.CarteEditura" FromRole="editura" ToRole="carte" />
+        </EntityType>
+        <EntityType Name="furnizor">
+          <Key>
+            <PropertyRef Name="IdFurnizor" />
+          </Key>
+          <Property Name="IdFurnizor" Type="Int32" Nullable="false" />
+          <Property Name="Nume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CUI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sold" Type="Double" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="achizitie" Relationship="Self.AchizitieFurnizor" FromRole="furnizor" ToRole="achizitie" />
+          <NavigationProperty Name="oferta" Relationship="Self.OfertaFurnizor" FromRole="furnizor" ToRole="oferta" />
+          <NavigationProperty Name="plata" Relationship="Self.PlataFurnizor" FromRole="furnizor" ToRole="plata" />
+        </EntityType>
+        <EntityType Name="linieachizitie">
+          <Key>
+            <PropertyRef Name="IdAchizitie" />
+            <PropertyRef Name="IdProdus" />
+          </Key>
+          <Property Name="IdAchizitie" Type="Int32" Nullable="false" />
+          <Property Name="IdProdus" Type="Int32" Nullable="false" />
+          <Property Name="Cantitate" Type="Int32" Nullable="false" />
+          <Property Name="Pret" Type="Double" Nullable="false" />
+          <NavigationProperty Name="achizitie" Relationship="Self.LinieA_Achizitie" FromRole="linieachizitie" ToRole="achizitie" />
+          <NavigationProperty Name="produs" Relationship="Self.LinieA_Produs" FromRole="linieachizitie" ToRole="produs" />
+        </EntityType>
+        <EntityType Name="linieoferta">
+          <Key>
+            <PropertyRef Name="IdOferta" />
+            <PropertyRef Name="IdProdus" />
+          </Key>
+          <Property Name="IdOferta" Type="Int32" Nullable="false" />
+          <Property Name="IdProdus" Type="Int32" Nullable="false" />
+          <Property Name="PretFurnizor" Type="Double" Nullable="false" />
+          <Property Name="Cantitate" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="oferta" Relationship="Self.LinieO_Oferta" FromRole="linieoferta" ToRole="oferta" />
+          <NavigationProperty Name="produs" Relationship="Self.LinieO_Produs" FromRole="linieoferta" ToRole="produs" />
+        </EntityType>
+        <EntityType Name="linievanzare">
+          <Key>
+            <PropertyRef Name="IdVanzare" />
+            <PropertyRef Name="IdProdus" />
+          </Key>
+          <Property Name="IdVanzare" Type="Int32" Nullable="false" />
+          <Property Name="IdProdus" Type="Int32" Nullable="false" />
+          <Property Name="Cantitate" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="produs" Relationship="Self.LinieV_Produs" FromRole="linievanzare" ToRole="produs" />
+          <NavigationProperty Name="vanzari" Relationship="Self.LinieV_Vanzare" FromRole="linievanzare" ToRole="vanzari" />
+        </EntityType>
+        <EntityType Name="oferta">
+          <Key>
+            <PropertyRef Name="IdOferta" />
+          </Key>
+          <Property Name="IdOferta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataExpirare" Type="DateTime" Nullable="false" />
+          <Property Name="IdFurnizor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="furnizor" Relationship="Self.OfertaFurnizor" FromRole="oferta" ToRole="furnizor" />
+          <NavigationProperty Name="linieoferta" Relationship="Self.LinieO_Oferta" FromRole="oferta" ToRole="linieoferta" />
+        </EntityType>
+        <EntityType Name="plata">
+          <Key>
+            <PropertyRef Name="IdPlata" />
+          </Key>
+          <Property Name="IdPlata" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SerieDocument" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NrDocument" Type="Int32" Nullable="false" />
+          <Property Name="Suma" Type="Double" Nullable="false" />
+          <Property Name="IdFurnizor" Type="Int32" Nullable="false" />
+          <Property Name="IdAchizitie" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="achizitie" Relationship="Self.PlataAchizitie" FromRole="plata" ToRole="achizitie" />
+          <NavigationProperty Name="furnizor" Relationship="Self.PlataFurnizor" FromRole="plata" ToRole="furnizor" />
+        </EntityType>
+        <EntityType Name="produs">
+          <Key>
+            <PropertyRef Name="IdProdus" />
+          </Key>
+          <Property Name="IdProdus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTipProdus" Type="Int32" Nullable="false" />
+          <Property Name="Produs1" Type="Int32" Nullable="false" />
+          <Property Name="Pret" Type="Double" Nullable="false" />
+          <Property Name="Cantitate" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="linieachizitie" Relationship="Self.LinieA_Produs" FromRole="produs" ToRole="linieachizitie" />
+          <NavigationProperty Name="linieoferta" Relationship="Self.LinieO_Produs" FromRole="produs" ToRole="linieoferta" />
+          <NavigationProperty Name="linievanzare" Relationship="Self.LinieV_Produs" FromRole="produs" ToRole="linievanzare" />
+          <NavigationProperty Name="tipprodus" Relationship="Self.produs_ibfk_1" FromRole="produs" ToRole="tipprodus" />
+        </EntityType>
+        <EntityType Name="tipprodus">
+          <Key>
+            <PropertyRef Name="IdTipProdus" />
+          </Key>
+          <Property Name="IdTipProdus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TipProdus1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="produs" Relationship="Self.produs_ibfk_1" FromRole="tipprodus" ToRole="produs" />
+        </EntityType>
+        <EntityType Name="utilizator">
+          <Key>
+            <PropertyRef Name="IdUtilizator" />
+          </Key>
+          <Property Name="IdUtilizator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Parola" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GradSecuritate" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vanzari">
+          <Key>
+            <PropertyRef Name="IdVanzare" />
+          </Key>
+          <Property Name="IdVanzare" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdClient" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="client" Relationship="Self.VanzariClient" FromRole="vanzari" ToRole="client" />
+          <NavigationProperty Name="linievanzare" Relationship="Self.LinieV_Vanzare" FromRole="vanzari" ToRole="linievanzare" />
+        </EntityType>
+        <EntityType Name="cartedetaliu">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Produs" />
+            <PropertyRef Name="Titlu" />
+            <PropertyRef Name="Descriere" />
+            <PropertyRef Name="ISBN" />
+            <PropertyRef Name="An" />
+            <PropertyRef Name="NrPagini" />
+            <PropertyRef Name="Locatie" />
+            <PropertyRef Name="Autor" />
+            <PropertyRef Name="Domeniu" />
+            <PropertyRef Name="Editura" />
+            <PropertyRef Name="Pret" />
+            <PropertyRef Name="Cantitate" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Produs" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Titlu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descriere" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ISBN" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="An" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NrPagini" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Locatie" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Autor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Domeniu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Editura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pret" Type="Double" Nullable="false" />
+          <Property Name="Cantitate" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="AchizitieFurnizor">
+          <End Role="furnizor" Type="Self.furnizor" Multiplicity="1" />
+          <End Role="achizitie" Type="Self.achizitie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="furnizor">
+              <PropertyRef Name="IdFurnizor" />
+            </Principal>
+            <Dependent Role="achizitie">
+              <PropertyRef Name="IdFurnizor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieA_Achizitie">
+          <End Role="achizitie" Type="Self.achizitie" Multiplicity="1" />
+          <End Role="linieachizitie" Type="Self.linieachizitie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="achizitie">
+              <PropertyRef Name="IdAchizitie" />
+            </Principal>
+            <Dependent Role="linieachizitie">
+              <PropertyRef Name="IdAchizitie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlataAchizitie">
+          <End Role="achizitie" Type="Self.achizitie" Multiplicity="1" />
+          <End Role="plata" Type="Self.plata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="achizitie">
+              <PropertyRef Name="IdAchizitie" />
+            </Principal>
+            <Dependent Role="plata">
+              <PropertyRef Name="IdAchizitie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CarteAutor">
+          <End Role="autor" Type="Self.autor" Multiplicity="1" />
+          <End Role="carte" Type="Self.carte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="autor">
+              <PropertyRef Name="IdAutor" />
+            </Principal>
+            <Dependent Role="carte">
+              <PropertyRef Name="IdAutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CarteDomeniu">
+          <End Role="domeniu" Type="Self.domeniu" Multiplicity="1" />
+          <End Role="carte" Type="Self.carte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="domeniu">
+              <PropertyRef Name="IdDomeniu" />
+            </Principal>
+            <Dependent Role="carte">
+              <PropertyRef Name="IdDomeniu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CarteEditura">
+          <End Role="editura" Type="Self.editura" Multiplicity="1" />
+          <End Role="carte" Type="Self.carte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="editura">
+              <PropertyRef Name="IdEditura" />
+            </Principal>
+            <Dependent Role="carte">
+              <PropertyRef Name="IdEditura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VanzariClient">
+          <End Role="client" Type="Self.client" Multiplicity="1" />
+          <End Role="vanzari" Type="Self.vanzari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="client">
+              <PropertyRef Name="IdClient" />
+            </Principal>
+            <Dependent Role="vanzari">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OfertaFurnizor">
+          <End Role="furnizor" Type="Self.furnizor" Multiplicity="1" />
+          <End Role="oferta" Type="Self.oferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="furnizor">
+              <PropertyRef Name="IdFurnizor" />
+            </Principal>
+            <Dependent Role="oferta">
+              <PropertyRef Name="IdFurnizor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlataFurnizor">
+          <End Role="furnizor" Type="Self.furnizor" Multiplicity="1" />
+          <End Role="plata" Type="Self.plata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="furnizor">
+              <PropertyRef Name="IdFurnizor" />
+            </Principal>
+            <Dependent Role="plata">
+              <PropertyRef Name="IdFurnizor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieA_Produs">
+          <End Role="produs" Type="Self.produs" Multiplicity="1" />
+          <End Role="linieachizitie" Type="Self.linieachizitie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produs">
+              <PropertyRef Name="IdProdus" />
+            </Principal>
+            <Dependent Role="linieachizitie">
+              <PropertyRef Name="IdProdus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieO_Oferta">
+          <End Role="oferta" Type="Self.oferta" Multiplicity="1" />
+          <End Role="linieoferta" Type="Self.linieoferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oferta">
+              <PropertyRef Name="IdOferta" />
+            </Principal>
+            <Dependent Role="linieoferta">
+              <PropertyRef Name="IdOferta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieO_Produs">
+          <End Role="produs" Type="Self.produs" Multiplicity="1" />
+          <End Role="linieoferta" Type="Self.linieoferta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produs">
+              <PropertyRef Name="IdProdus" />
+            </Principal>
+            <Dependent Role="linieoferta">
+              <PropertyRef Name="IdProdus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieV_Produs">
+          <End Role="produs" Type="Self.produs" Multiplicity="1" />
+          <End Role="linievanzare" Type="Self.linievanzare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produs">
+              <PropertyRef Name="IdProdus" />
+            </Principal>
+            <Dependent Role="linievanzare">
+              <PropertyRef Name="IdProdus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LinieV_Vanzare">
+          <End Role="vanzari" Type="Self.vanzari" Multiplicity="1" />
+          <End Role="linievanzare" Type="Self.linievanzare" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vanzari">
+              <PropertyRef Name="IdVanzare" />
+            </Principal>
+            <Dependent Role="linievanzare">
+              <PropertyRef Name="IdVanzare" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="produs_ibfk_1">
+          <End Role="tipprodus" Type="Self.tipprodus" Multiplicity="1" />
+          <End Role="produs" Type="Self.produs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipprodus">
+              <PropertyRef Name="IdTipProdus" />
+            </Principal>
+            <Dependent Role="produs">
+              <PropertyRef Name="IdTipProdus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LabDataContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="achizitie" EntityType="Self.achizitie" />
+          <EntitySet Name="autor" EntityType="Self.autor" />
+          <EntitySet Name="birotica" EntityType="Self.birotica" />
+          <EntitySet Name="carte" EntityType="Self.carte" />
+          <EntitySet Name="client" EntityType="Self.client" />
+          <EntitySet Name="domeniu" EntityType="Self.domeniu" />
+          <EntitySet Name="editura" EntityType="Self.editura" />
+          <EntitySet Name="furnizor" EntityType="Self.furnizor" />
+          <EntitySet Name="linieachizitie" EntityType="Self.linieachizitie" />
+          <EntitySet Name="linieoferta" EntityType="Self.linieoferta" />
+          <EntitySet Name="linievanzare" EntityType="Self.linievanzare" />
+          <EntitySet Name="oferta" EntityType="Self.oferta" />
+          <EntitySet Name="plata" EntityType="Self.plata" />
+          <EntitySet Name="produs" EntityType="Self.produs" />
+          <EntitySet Name="tipprodus" EntityType="Self.tipprodus" />
+          <EntitySet Name="utilizator" EntityType="Self.utilizator" />
+          <EntitySet Name="vanzari" EntityType="Self.vanzari" />
+          <EntitySet Name="cartedetaliu" EntityType="Self.cartedetaliu" />
+          <AssociationSet Name="AchizitieFurnizor" Association="Self.AchizitieFurnizor">
+            <End Role="furnizor" EntitySet="furnizor" />
+            <End Role="achizitie" EntitySet="achizitie" />
+          </AssociationSet>
+          <AssociationSet Name="LinieA_Achizitie" Association="Self.LinieA_Achizitie">
+            <End Role="achizitie" EntitySet="achizitie" />
+            <End Role="linieachizitie" EntitySet="linieachizitie" />
+          </AssociationSet>
+          <AssociationSet Name="PlataAchizitie" Association="Self.PlataAchizitie">
+            <End Role="achizitie" EntitySet="achizitie" />
+            <End Role="plata" EntitySet="plata" />
+          </AssociationSet>
+          <AssociationSet Name="CarteAutor" Association="Self.CarteAutor">
+            <End Role="autor" EntitySet="autor" />
+            <End Role="carte" EntitySet="carte" />
+          </AssociationSet>
+          <AssociationSet Name="CarteDomeniu" Association="Self.CarteDomeniu">
+            <End Role="domeniu" EntitySet="domeniu" />
+            <End Role="carte" EntitySet="carte" />
+          </AssociationSet>
+          <AssociationSet Name="CarteEditura" Association="Self.CarteEditura">
+            <End Role="editura" EntitySet="editura" />
+            <End Role="carte" EntitySet="carte" />
+          </AssociationSet>
+          <AssociationSet Name="VanzariClient" Association="Self.VanzariClient">
+            <End Role="client" EntitySet="client" />
+            <End Role="vanzari" EntitySet="vanzari" />
+          </AssociationSet>
+          <AssociationSet Name="OfertaFurnizor" Association="Self.OfertaFurnizor">
+            <End Role="furnizor" EntitySet="furnizor" />
+            <End Role="oferta" EntitySet="oferta" />
+          </AssociationSet>
+          <AssociationSet Name="PlataFurnizor" Association="Self.PlataFurnizor">
+            <End Role="furnizor" EntitySet="furnizor" />
+            <End Role="plata" EntitySet="plata" />
+          </AssociationSet>
+          <AssociationSet Name="LinieA_Produs" Association="Self.LinieA_Produs">
+            <End Role="produs" EntitySet="produs" />
+            <End Role="linieachizitie" EntitySet="linieachizitie" />
+          </AssociationSet>
+          <AssociationSet Name="LinieO_Oferta" Association="Self.LinieO_Oferta">
+            <End Role="oferta" EntitySet="oferta" />
+            <End Role="linieoferta" EntitySet="linieoferta" />
+          </AssociationSet>
+          <AssociationSet Name="LinieO_Produs" Association="Self.LinieO_Produs">
+            <End Role="produs" EntitySet="produs" />
+            <End Role="linieoferta" EntitySet="linieoferta" />
+          </AssociationSet>
+          <AssociationSet Name="LinieV_Produs" Association="Self.LinieV_Produs">
+            <End Role="produs" EntitySet="produs" />
+            <End Role="linievanzare" EntitySet="linievanzare" />
+          </AssociationSet>
+          <AssociationSet Name="LinieV_Vanzare" Association="Self.LinieV_Vanzare">
+            <End Role="vanzari" EntitySet="vanzari" />
+            <End Role="linievanzare" EntitySet="linievanzare" />
+          </AssociationSet>
+          <AssociationSet Name="produs_ibfk_1" Association="Self.produs_ibfk_1">
+            <End Role="tipprodus" EntitySet="tipprodus" />
+            <End Role="produs" EntitySet="produs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LabDataModelStoreContainer" CdmEntityContainer="LabDataContext">
+          <EntitySetMapping Name="achizitie">
+            <EntityTypeMapping TypeName="LabDataModel.achizitie">
+              <MappingFragment StoreEntitySet="achizitie">
+                <ScalarProperty Name="IdAchizitie" ColumnName="IdAchizitie" />
+                <ScalarProperty Name="IdFurnizor" ColumnName="IdFurnizor" />
+                <ScalarProperty Name="NrDocument" ColumnName="NrDocument" />
+                <ScalarProperty Name="SerieDocument" ColumnName="SerieDocument" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="autor">
+            <EntityTypeMapping TypeName="LabDataModel.autor">
+              <MappingFragment StoreEntitySet="autor">
+                <ScalarProperty Name="IdAutor" ColumnName="IdAutor" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="birotica">
+            <EntityTypeMapping TypeName="LabDataModel.birotica">
+              <MappingFragment StoreEntitySet="birotica">
+                <ScalarProperty Name="IdBirotica" ColumnName="IdBirotica" />
+                <ScalarProperty Name="Denumire" ColumnName="Denumire" />
+                <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="carte">
+            <EntityTypeMapping TypeName="LabDataModel.carte">
+              <MappingFragment StoreEntitySet="carte">
+                <ScalarProperty Name="IdCarte" ColumnName="IdCarte" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="Titlu" ColumnName="Titlu" />
+                <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+                <ScalarProperty Name="IdEditura" ColumnName="IdEditura" />
+                <ScalarProperty Name="An" ColumnName="An" />
+                <ScalarProperty Name="NrPagini" ColumnName="NrPagini" />
+                <ScalarProperty Name="Locatie" ColumnName="Locatie" />
+                <ScalarProperty Name="IdAutor" ColumnName="IdAutor" />
+                <ScalarProperty Name="IdDomeniu" ColumnName="IdDomeniu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="client">
+            <EntityTypeMapping TypeName="LabDataModel.client">
+              <MappingFragment StoreEntitySet="client">
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="Varsta" ColumnName="Varsta" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="domeniu">
+            <EntityTypeMapping TypeName="LabDataModel.domeniu">
+              <MappingFragment StoreEntitySet="domeniu">
+                <ScalarProperty Name="IdDomeniu" ColumnName="IdDomeniu" />
+                <ScalarProperty Name="Domeniu1" ColumnName="Domeniu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="editura">
+            <EntityTypeMapping TypeName="LabDataModel.editura">
+              <MappingFragment StoreEntitySet="editura">
+                <ScalarProperty Name="IdEditura" ColumnName="IdEditura" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="furnizor">
+            <EntityTypeMapping TypeName="LabDataModel.furnizor">
+              <MappingFragment StoreEntitySet="furnizor">
+                <ScalarProperty Name="IdFurnizor" ColumnName="IdFurnizor" />
+                <ScalarProperty Name="Nume" ColumnName="Nume" />
+                <ScalarProperty Name="CUI" ColumnName="CUI" />
+                <ScalarProperty Name="Sold" ColumnName="Sold" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="linieachizitie">
+            <EntityTypeMapping TypeName="LabDataModel.linieachizitie">
+              <MappingFragment StoreEntitySet="linieachizitie">
+                <ScalarProperty Name="IdAchizitie" ColumnName="IdAchizitie" />
+                <ScalarProperty Name="IdProdus" ColumnName="IdProdus" />
+                <ScalarProperty Name="Cantitate" ColumnName="Cantitate" />
+                <ScalarProperty Name="Pret" ColumnName="Pret" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="linieoferta">
+            <EntityTypeMapping TypeName="LabDataModel.linieoferta">
+              <MappingFragment StoreEntitySet="linieoferta">
+                <ScalarProperty Name="IdOferta" ColumnName="IdOferta" />
+                <ScalarProperty Name="IdProdus" ColumnName="IdProdus" />
+                <ScalarProperty Name="PretFurnizor" ColumnName="PretFurnizor" />
+                <ScalarProperty Name="Cantitate" ColumnName="Cantitate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="linievanzare">
+            <EntityTypeMapping TypeName="LabDataModel.linievanzare">
+              <MappingFragment StoreEntitySet="linievanzare">
+                <ScalarProperty Name="IdVanzare" ColumnName="IdVanzare" />
+                <ScalarProperty Name="IdProdus" ColumnName="IdProdus" />
+                <ScalarProperty Name="Cantitate" ColumnName="Cantitate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="oferta">
+            <EntityTypeMapping TypeName="LabDataModel.oferta">
+              <MappingFragment StoreEntitySet="oferta">
+                <ScalarProperty Name="IdOferta" ColumnName="IdOferta" />
+                <ScalarProperty Name="DataExpirare" ColumnName="DataExpirare" />
+                <ScalarProperty Name="IdFurnizor" ColumnName="IdFurnizor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="plata">
+            <EntityTypeMapping TypeName="LabDataModel.plata">
+              <MappingFragment StoreEntitySet="plata">
+                <ScalarProperty Name="IdPlata" ColumnName="IdPlata" />
+                <ScalarProperty Name="SerieDocument" ColumnName="SerieDocument" />
+                <ScalarProperty Name="NrDocument" ColumnName="NrDocument" />
+                <ScalarProperty Name="Suma" ColumnName="Suma" />
+                <ScalarProperty Name="IdFurnizor" ColumnName="IdFurnizor" />
+                <ScalarProperty Name="IdAchizitie" ColumnName="IdAchizitie" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produs">
+            <EntityTypeMapping TypeName="LabDataModel.produs">
+              <MappingFragment StoreEntitySet="produs">
+                <ScalarProperty Name="IdProdus" ColumnName="IdProdus" />
+                <ScalarProperty Name="IdTipProdus" ColumnName="IdTipProdus" />
+                <ScalarProperty Name="Produs1" ColumnName="Produs" />
+                <ScalarProperty Name="Pret" ColumnName="Pret" />
+                <ScalarProperty Name="Cantitate" ColumnName="Cantitate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipprodus">
+            <EntityTypeMapping TypeName="LabDataModel.tipprodus">
+              <MappingFragment StoreEntitySet="tipprodus">
+                <ScalarProperty Name="IdTipProdus" ColumnName="IdTipProdus" />
+                <ScalarProperty Name="TipProdus1" ColumnName="TipProdus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="utilizator">
+            <EntityTypeMapping TypeName="LabDataModel.utilizator">
+              <MappingFragment StoreEntitySet="utilizator">
+                <ScalarProperty Name="IdUtilizator" ColumnName="IdUtilizator" />
+                <ScalarProperty Name="Parola" ColumnName="Parola" />
+                <ScalarProperty Name="GradSecuritate" ColumnName="GradSecuritate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vanzari">
+            <EntityTypeMapping TypeName="LabDataModel.vanzari">
+              <MappingFragment StoreEntitySet="vanzari">
+                <ScalarProperty Name="IdVanzare" ColumnName="IdVanzare" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cartedetaliu">
+            <EntityTypeMapping TypeName="LabDataModel.cartedetaliu">
+              <MappingFragment StoreEntitySet="cartedetaliu">
+                <ScalarProperty Name="Cantitate" ColumnName="Cantitate" />
+                <ScalarProperty Name="Pret" ColumnName="Pret" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Produs" ColumnName="Produs" />
+                <ScalarProperty Name="Titlu" ColumnName="Titlu" />
+                <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="An" ColumnName="An" />
+                <ScalarProperty Name="NrPagini" ColumnName="NrPagini" />
+                <ScalarProperty Name="Locatie" ColumnName="Locatie" />
+                <ScalarProperty Name="Autor" ColumnName="Autor" />
+                <ScalarProperty Name="Domeniu" ColumnName="Domeniu" />
+                <ScalarProperty Name="Editura" ColumnName="Editura" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

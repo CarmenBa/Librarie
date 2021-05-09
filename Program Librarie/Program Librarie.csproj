@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1047356-3D5C-4589-A25B-56ACE37DEECB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Program_Librarie</RootNamespace>
+    <AssemblyName>Program Librarie</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.5\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\MySQL\MySQL Connector Net 6.9.9\Assemblies\v4.5\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.6\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.6\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Code\Autori.cs" />
+    <Compile Include="Code\Birotica.cs" />
+    <Compile Include="Code\Client.cs" />
+    <Compile Include="Code\Domenii.cs" />
+    <Compile Include="Code\Edituri.cs" />
+    <Compile Include="Code\Extensions.cs" />
+    <Compile Include="Code\Furnizor.cs" />
+    <Compile Include="Code\Login.cs" />
+    <Compile Include="Code\Oferta.cs" />
+    <Compile Include="Code\Stocuri.cs" />
+    <Compile Include="DB\achizitie.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\autor.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\birotica.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\carte.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\cartedetaliu.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\client.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\domeniu.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\editura.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\furnizor.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\LabDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LabDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\LabDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\LabDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LabDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\linieachizitie.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\linieoferta.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\linievanzare.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\oferta.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\plata.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\produs.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\tipprodus.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\utilizator.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\vanzari.cs">
+      <DependentUpon>LabDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Achizitii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Achizitii.Designer.cs">
+      <DependentUpon>Achizitii.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AdaugaClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AdaugaClient.Designer.cs">
+      <DependentUpon>AdaugaClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Autori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Autori.Designer.cs">
+      <DependentUpon>Autori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Birotica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Birotica.Designer.cs">
+      <DependentUpon>Birotica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Domenii.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Domenii.Designer.cs">
+      <DependentUpon>Domenii.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Edituri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Edituri.Designer.cs">
+      <DependentUpon>Edituri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FacturiPlata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FacturiPlata.Designer.cs">
+      <DependentUpon>FacturiPlata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Furnizor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Furnizor.Designer.cs">
+      <DependentUpon>Furnizor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Code\MySQL.cs" />
+    <Compile Include="Form\Oferta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Oferta.Designer.cs">
+      <DependentUpon>Oferta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Plati.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Plati.Designer.cs">
+      <DependentUpon>Plati.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Principal.designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Produse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Produse.designer.cs">
+      <DependentUpon>Produse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibrarieDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibrarieDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Form\SoldFurnizori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\SoldFurnizori.Designer.cs">
+      <DependentUpon>SoldFurnizori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Stocuri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Stocuri.Designer.cs">
+      <DependentUpon>Stocuri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Vanzari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Vanzari.Designer.cs">
+      <DependentUpon>Vanzari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\RaportVanzari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\RaportVanzari.Designer.cs">
+      <DependentUpon>RaportVanzari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\RaportStocuri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\RaportStocuri.Designer.cs">
+      <DependentUpon>RaportStocuri.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\Achizitii.resx">
+      <DependentUpon>Achizitii.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AdaugaClient.resx">
+      <DependentUpon>AdaugaClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Autori.resx">
+      <DependentUpon>Autori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Birotica.resx">
+      <DependentUpon>Birotica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Domenii.resx">
+      <DependentUpon>Domenii.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Edituri.resx">
+      <DependentUpon>Edituri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FacturiPlata.resx">
+      <DependentUpon>FacturiPlata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Furnizor.resx">
+      <DependentUpon>Furnizor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Oferta.resx">
+      <DependentUpon>Oferta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Plati.resx">
+      <DependentUpon>Plati.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Produse.resx">
+      <DependentUpon>Produse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\RaportStocuri.resx">
+      <DependentUpon>RaportStocuri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\RaportVanzari.resx">
+      <DependentUpon>RaportVanzari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Form\SoldFurnizori.resx">
+      <DependentUpon>SoldFurnizori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Stocuri.resx">
+      <DependentUpon>Stocuri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Vanzari.resx">
+      <DependentUpon>Vanzari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DB\LabDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LabDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\LabDataModel.edmx.diagram">
+      <DependentUpon>LabDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="LibrarieDataSet.xsc">
+      <DependentUpon>LibrarieDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LibrarieDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibrarieDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibrarieDataSet.xss">
+      <DependentUpon>LibrarieDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdf-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excel-icon-15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\LabDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LabDataModel.edmx</DependentUpon>
+      <LastGenOutput>LabDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\LabDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LabDataModel.edmx</DependentUpon>
+      <LastGenOutput>LabDataModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
