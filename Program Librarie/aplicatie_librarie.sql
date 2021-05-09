@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2021 at 08:08 AM
+-- Generation Time: May 09, 2021 at 08:19 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `aplicatie_librarie`
 --
-CREATE DATABASE IF NOT EXISTS `aplicatie_librarie` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `aplicatie_librarie`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,6 @@ USE `aplicatie_librarie`;
 -- Table structure for table `achizitie`
 --
 
-DROP TABLE IF EXISTS `achizitie`;
 CREATE TABLE `achizitie` (
   `IdAchizitie` int(11) NOT NULL,
   `IdFurnizor` int(11) NOT NULL,
@@ -52,7 +49,6 @@ INSERT INTO `achizitie` (`IdAchizitie`, `IdFurnizor`, `NrDocument`, `SerieDocume
 -- Table structure for table `autor`
 --
 
-DROP TABLE IF EXISTS `autor`;
 CREATE TABLE `autor` (
   `IdAutor` int(11) NOT NULL,
   `Nume` varchar(50) COLLATE utf8_romanian_ci NOT NULL
@@ -63,10 +59,10 @@ CREATE TABLE `autor` (
 --
 
 INSERT INTO `autor` (`IdAutor`, `Nume`) VALUES
-(1, 'Ion Creangă'),
 (2, 'Mihai Eminescu'),
 (3, 'Mihail Sadoveanu'),
-(4, 'Octavian Dospinescu');
+(4, 'Octavian Dospinescu'),
+(5, 'Ion Creangă');
 
 -- --------------------------------------------------------
 
@@ -74,7 +70,6 @@ INSERT INTO `autor` (`IdAutor`, `Nume`) VALUES
 -- Table structure for table `birotica`
 --
 
-DROP TABLE IF EXISTS `birotica`;
 CREATE TABLE `birotica` (
   `IdBirotica` int(11) NOT NULL,
   `Denumire` varchar(50) COLLATE utf8_romanian_ci NOT NULL,
@@ -95,7 +90,6 @@ INSERT INTO `birotica` (`IdBirotica`, `Denumire`, `Descriere`) VALUES
 -- Table structure for table `carte`
 --
 
-DROP TABLE IF EXISTS `carte`;
 CREATE TABLE `carte` (
   `IdCarte` int(11) NOT NULL,
   `ISBN` varchar(11) COLLATE utf8_romanian_ci NOT NULL,
@@ -123,7 +117,6 @@ INSERT INTO `carte` (`IdCarte`, `ISBN`, `Titlu`, `Descriere`, `IdEditura`, `An`,
 -- Stand-in structure for view `cartedetaliu`
 -- (See below for the actual view)
 --
-DROP VIEW IF EXISTS `cartedetaliu`;
 CREATE TABLE `cartedetaliu` (
 `Id` int(11)
 ,`Produs` varchar(25)
@@ -146,7 +139,6 @@ CREATE TABLE `cartedetaliu` (
 -- Table structure for table `client`
 --
 
-DROP TABLE IF EXISTS `client`;
 CREATE TABLE `client` (
   `IdClient` int(11) NOT NULL,
   `Nume` varchar(50) COLLATE utf8_romanian_ci NOT NULL,
@@ -161,7 +153,7 @@ CREATE TABLE `client` (
 
 INSERT INTO `client` (`IdClient`, `Nume`, `Varsta`, `Sex`, `Email`) VALUES
 (1, 'Popescu Ion', 17, 'masculin', 'Popescu.ion@gmail.com'),
-(2, 'Ciobanu Ana', 35, 'feminin', 'CiobanuAna@gmail.com');
+(2, 'Ciobanu Ana', 34, 'feminin', 'CiobanuAna@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -169,7 +161,6 @@ INSERT INTO `client` (`IdClient`, `Nume`, `Varsta`, `Sex`, `Email`) VALUES
 -- Table structure for table `domeniu`
 --
 
-DROP TABLE IF EXISTS `domeniu`;
 CREATE TABLE `domeniu` (
   `IdDomeniu` int(11) NOT NULL,
   `Domeniu` varchar(50) COLLATE utf8_romanian_ci NOT NULL
@@ -189,7 +180,6 @@ INSERT INTO `domeniu` (`IdDomeniu`, `Domeniu`) VALUES
 -- Table structure for table `editura`
 --
 
-DROP TABLE IF EXISTS `editura`;
 CREATE TABLE `editura` (
   `IdEditura` int(11) NOT NULL,
   `Nume` varchar(50) COLLATE utf8_romanian_ci NOT NULL
@@ -211,22 +201,23 @@ INSERT INTO `editura` (`IdEditura`, `Nume`) VALUES
 -- Table structure for table `furnizor`
 --
 
-DROP TABLE IF EXISTS `furnizor`;
 CREATE TABLE `furnizor` (
   `IdFurnizor` int(11) NOT NULL,
   `Nume` varchar(50) COLLATE utf8_romanian_ci NOT NULL,
   `CUI` varchar(20) COLLATE utf8_romanian_ci NOT NULL,
   `Sold` double NOT NULL,
-  `Email` varchar(50) COLLATE utf8_romanian_ci NOT NULL
+  `Email` varchar(50) COLLATE utf8_romanian_ci NOT NULL,
+  `Telefon` varchar(12) COLLATE utf8_romanian_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_romanian_ci;
 
 --
 -- Dumping data for table `furnizor`
 --
 
-INSERT INTO `furnizor` (`IdFurnizor`, `Nume`, `CUI`, `Sold`, `Email`) VALUES
-(1, 'Cartea S.R.L.', 'RO146326xt', 0, 'Cartea@gmail.com'),
-(2, 'Pixar S.A.', 'RO1421486rt', 0, 'Pixar@gmail.com');
+INSERT INTO `furnizor` (`IdFurnizor`, `Nume`, `CUI`, `Sold`, `Email`, `Telefon`) VALUES
+(0, 'Test', 'RO somethingsome', 2, 'test@gmail.com', '1234'),
+(1, 'Cartea S.R.L.', 'RO146326xt', 0, 'Cartea@gmail.com', '123'),
+(2, 'Pixar S.A.', 'RO1421486rt', 0, 'Pixar@gmail.com', '');
 
 -- --------------------------------------------------------
 
@@ -234,7 +225,6 @@ INSERT INTO `furnizor` (`IdFurnizor`, `Nume`, `CUI`, `Sold`, `Email`) VALUES
 -- Table structure for table `linieachizitie`
 --
 
-DROP TABLE IF EXISTS `linieachizitie`;
 CREATE TABLE `linieachizitie` (
   `IdAchizitie` int(11) NOT NULL,
   `IdProdus` int(11) NOT NULL,
@@ -258,7 +248,6 @@ INSERT INTO `linieachizitie` (`IdAchizitie`, `IdProdus`, `Cantitate`, `Pret`) VA
 -- Table structure for table `linieoferta`
 --
 
-DROP TABLE IF EXISTS `linieoferta`;
 CREATE TABLE `linieoferta` (
   `IdOferta` int(11) NOT NULL,
   `IdProdus` int(11) NOT NULL,
@@ -281,7 +270,6 @@ INSERT INTO `linieoferta` (`IdOferta`, `IdProdus`, `PretFurnizor`, `Cantitate`) 
 -- Table structure for table `linievanzare`
 --
 
-DROP TABLE IF EXISTS `linievanzare`;
 CREATE TABLE `linievanzare` (
   `IdVanzare` int(11) NOT NULL,
   `IdProdus` int(11) NOT NULL,
@@ -304,7 +292,6 @@ INSERT INTO `linievanzare` (`IdVanzare`, `IdProdus`, `Cantitate`) VALUES
 -- Table structure for table `oferta`
 --
 
-DROP TABLE IF EXISTS `oferta`;
 CREATE TABLE `oferta` (
   `IdOferta` int(11) NOT NULL,
   `DataExpirare` date NOT NULL,
@@ -316,8 +303,8 @@ CREATE TABLE `oferta` (
 --
 
 INSERT INTO `oferta` (`IdOferta`, `DataExpirare`, `IdFurnizor`) VALUES
-(1, '2019-09-30', 1),
-(2, '2019-10-02', 2);
+(1, '2019-09-18', 1),
+(2, '2021-10-31', 2);
 
 -- --------------------------------------------------------
 
@@ -325,7 +312,6 @@ INSERT INTO `oferta` (`IdOferta`, `DataExpirare`, `IdFurnizor`) VALUES
 -- Table structure for table `plata`
 --
 
-DROP TABLE IF EXISTS `plata`;
 CREATE TABLE `plata` (
   `IdPlata` int(11) NOT NULL,
   `SerieDocument` varchar(10) COLLATE utf8_romanian_ci NOT NULL,
@@ -336,13 +322,36 @@ CREATE TABLE `plata` (
   `Data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_romanian_ci;
 
+--
+-- Dumping data for table `plata`
+--
+
+INSERT INTO `plata` (`IdPlata`, `SerieDocument`, `NrDocument`, `Suma`, `IdFurnizor`, `IdAchizitie`, `Data`) VALUES
+(1, '0123456', 1, 200, 1, 1, '2021-05-05');
+
+-- --------------------------------------------------------
+
+--
+-- Stand-in structure for view `platadetaliu`
+-- (See below for the actual view)
+--
+CREATE TABLE `platadetaliu` (
+`IdPlata` int(11)
+,`SerieDocument` varchar(10)
+,`NrDocument` int(11)
+,`Suma` double
+,`IdFurnizor` int(11)
+,`Furnizor` varchar(50)
+,`IdAchizitie` int(11)
+,`Data` date
+);
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `produs`
 --
 
-DROP TABLE IF EXISTS `produs`;
 CREATE TABLE `produs` (
   `IdProdus` int(11) NOT NULL,
   `IdTipProdus` int(11) NOT NULL,
@@ -367,7 +376,6 @@ INSERT INTO `produs` (`IdProdus`, `IdTipProdus`, `Produs`, `Pret`, `Cantitate`) 
 -- Table structure for table `tipprodus`
 --
 
-DROP TABLE IF EXISTS `tipprodus`;
 CREATE TABLE `tipprodus` (
   `IdTipProdus` int(11) NOT NULL,
   `TipProdus` varchar(25) COLLATE utf8_romanian_ci NOT NULL
@@ -387,7 +395,6 @@ INSERT INTO `tipprodus` (`IdTipProdus`, `TipProdus`) VALUES
 -- Table structure for table `utilizator`
 --
 
-DROP TABLE IF EXISTS `utilizator`;
 CREATE TABLE `utilizator` (
   `IdUtilizator` varchar(50) COLLATE utf8_romanian_ci NOT NULL,
   `Parola` varchar(50) COLLATE utf8_romanian_ci NOT NULL,
@@ -407,7 +414,6 @@ INSERT INTO `utilizator` (`IdUtilizator`, `Parola`, `GradSecuritate`) VALUES
 -- Table structure for table `vanzari`
 --
 
-DROP TABLE IF EXISTS `vanzari`;
 CREATE TABLE `vanzari` (
   `IdVanzare` int(11) NOT NULL,
   `IdClient` int(11) NOT NULL,
@@ -429,8 +435,16 @@ INSERT INTO `vanzari` (`IdVanzare`, `IdClient`, `Data`) VALUES
 --
 DROP TABLE IF EXISTS `cartedetaliu`;
 
-DROP VIEW IF EXISTS `cartedetaliu`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cartedetaliu`  AS SELECT `c`.`IdCarte` AS `Id`, `t`.`TipProdus` AS `Produs`, `c`.`Titlu` AS `Titlu`, `c`.`Descriere` AS `Descriere`, `p`.`Pret` AS `Pret`, `p`.`Cantitate` AS `Cantitate`, `c`.`ISBN` AS `ISBN`, `c`.`An` AS `An`, `c`.`NrPagini` AS `NrPagini`, `c`.`Locatie` AS `Locatie`, `a`.`Nume` AS `Autor`, `d`.`Domeniu` AS `Domeniu`, `e`.`Nume` AS `Editura` FROM (((((`carte` `c` join `autor` `a` on(`c`.`IdAutor` = `a`.`IdAutor`)) join `domeniu` `d` on(`c`.`IdDomeniu` = `d`.`IdDomeniu`)) join `editura` `e` on(`c`.`IdEditura` = `e`.`IdEditura`)) join `produs` `p` on(`c`.`IdCarte` = `p`.`Produs` and `p`.`IdTipProdus` = 1)) join `tipprodus` `t` on(`p`.`IdTipProdus` = `t`.`IdTipProdus`)) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure for view `platadetaliu`
+--
+DROP TABLE IF EXISTS `platadetaliu`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `platadetaliu`  AS SELECT `p`.`IdPlata` AS `IdPlata`, `p`.`SerieDocument` AS `SerieDocument`, `p`.`NrDocument` AS `NrDocument`, `p`.`Suma` AS `Suma`, `p`.`IdFurnizor` AS `IdFurnizor`, `f`.`Nume` AS `Furnizor`, `p`.`IdAchizitie` AS `IdAchizitie`, `p`.`Data` AS `Data` FROM (`plata` `p` join `furnizor` `f` on(`p`.`IdFurnizor` = `f`.`IdFurnizor`)) ;
 
 --
 -- Indexes for dumped tables
@@ -559,7 +573,7 @@ ALTER TABLE `vanzari`
 -- AUTO_INCREMENT for table `autor`
 --
 ALTER TABLE `autor`
-  MODIFY `IdAutor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `IdAutor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `domeniu`
@@ -577,13 +591,13 @@ ALTER TABLE `editura`
 -- AUTO_INCREMENT for table `oferta`
 --
 ALTER TABLE `oferta`
-  MODIFY `IdOferta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdOferta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `plata`
 --
 ALTER TABLE `plata`
-  MODIFY `IdPlata` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdPlata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `produs`

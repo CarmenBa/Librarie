@@ -3566,6 +3566,14 @@ namespace Program_Librarie {
             
             private global::System.Data.DataColumn columnPret;
             
+            private global::System.Data.DataColumn columnIdTipProdus;
+            
+            private global::System.Data.DataColumn columnTipProdus;
+            
+            private global::System.Data.DataColumn columnNumeProdus;
+            
+            private global::System.Data.DataColumn columnData;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public linieachizitieDataTable() {
@@ -3633,6 +3641,38 @@ namespace Program_Librarie {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IdTipProdusColumn {
+                get {
+                    return this.columnIdTipProdus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn TipProdusColumn {
+                get {
+                    return this.columnTipProdus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn NumeProdusColumn {
+                get {
+                    return this.columnNumeProdus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn DataColumn {
+                get {
+                    return this.columnData;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3668,13 +3708,17 @@ namespace Program_Librarie {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public linieachizitieRow AddlinieachizitieRow(achizitieRow _parentachizitieRowByLinieA_Achizitie, produsRow _parentprodusRowByLinieA_Produs, int Cantitate, double Pret) {
+            public linieachizitieRow AddlinieachizitieRow(achizitieRow _parentachizitieRowByLinieA_Achizitie, produsRow _parentprodusRowByLinieA_Produs, int Cantitate, double Pret, int IdTipProdus, string TipProdus, string NumeProdus, System.DateTime Data) {
                 linieachizitieRow rowlinieachizitieRow = ((linieachizitieRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         Cantitate,
-                        Pret};
+                        Pret,
+                        IdTipProdus,
+                        TipProdus,
+                        NumeProdus,
+                        Data};
                 if ((_parentachizitieRowByLinieA_Achizitie != null)) {
                     columnValuesArray[0] = _parentachizitieRowByLinieA_Achizitie[0];
                 }
@@ -3715,6 +3759,10 @@ namespace Program_Librarie {
                 this.columnIdProdus = base.Columns["IdProdus"];
                 this.columnCantitate = base.Columns["Cantitate"];
                 this.columnPret = base.Columns["Pret"];
+                this.columnIdTipProdus = base.Columns["IdTipProdus"];
+                this.columnTipProdus = base.Columns["TipProdus"];
+                this.columnNumeProdus = base.Columns["NumeProdus"];
+                this.columnData = base.Columns["Data"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3728,6 +3776,14 @@ namespace Program_Librarie {
                 base.Columns.Add(this.columnCantitate);
                 this.columnPret = new global::System.Data.DataColumn("Pret", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPret);
+                this.columnIdTipProdus = new global::System.Data.DataColumn("IdTipProdus", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdTipProdus);
+                this.columnTipProdus = new global::System.Data.DataColumn("TipProdus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipProdus);
+                this.columnNumeProdus = new global::System.Data.DataColumn("NumeProdus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeProdus);
+                this.columnData = new global::System.Data.DataColumn("Data", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnData);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdAchizitie,
                                 this.columnIdProdus}, true));
@@ -3735,6 +3791,12 @@ namespace Program_Librarie {
                 this.columnIdProdus.AllowDBNull = false;
                 this.columnCantitate.AllowDBNull = false;
                 this.columnPret.AllowDBNull = false;
+                this.columnIdTipProdus.AllowDBNull = false;
+                this.columnTipProdus.AllowDBNull = false;
+                this.columnTipProdus.MaxLength = 25;
+                this.columnNumeProdus.AllowDBNull = false;
+                this.columnNumeProdus.MaxLength = 100;
+                this.columnData.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7917,6 +7979,50 @@ namespace Program_Librarie {
                 }
                 set {
                     this[this.tablelinieachizitie.PretColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int IdTipProdus {
+                get {
+                    return ((int)(this[this.tablelinieachizitie.IdTipProdusColumn]));
+                }
+                set {
+                    this[this.tablelinieachizitie.IdTipProdusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string TipProdus {
+                get {
+                    return ((string)(this[this.tablelinieachizitie.TipProdusColumn]));
+                }
+                set {
+                    this[this.tablelinieachizitie.TipProdusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string NumeProdus {
+                get {
+                    return ((string)(this[this.tablelinieachizitie.NumeProdusColumn]));
+                }
+                set {
+                    this[this.tablelinieachizitie.NumeProdusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Data {
+                get {
+                    return ((global::System.DateTime)(this[this.tablelinieachizitie.DataColumn]));
+                }
+                set {
+                    this[this.tablelinieachizitie.DataColumn] = value;
                 }
             }
             
@@ -13202,143 +13308,11 @@ namespace Program_Librarie.LibrarieDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("IdProdus", "IdProdus");
             tableMapping.ColumnMappings.Add("Cantitate", "Cantitate");
             tableMapping.ColumnMappings.Add("Pret", "Pret");
+            tableMapping.ColumnMappings.Add("IdTipProdus", "IdTipProdus");
+            tableMapping.ColumnMappings.Add("TipProdus", "TipProdus");
+            tableMapping.ColumnMappings.Add("NumeProdus", "NumeProdus");
+            tableMapping.ColumnMappings.Add("Data", "Data");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM `linieachizitie` WHERE ((`IdAchizitie` = @p1) AND (`IdProdus` = @p2) " +
-                "AND (`Cantitate` = @p3) AND (`Pret` = @p4))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "IdAchizitie";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "IdProdus";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Cantitate";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
-            param.IsNullable = true;
-            param.SourceColumn = "Pret";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `linieachizitie` (`IdAchizitie`, `IdProdus`, `Cantitate`, `Pret`) VAL" +
-                "UES (@p1, @p2, @p3, @p4)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "IdAchizitie";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "IdProdus";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Cantitate";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
-            param.IsNullable = true;
-            param.SourceColumn = "Pret";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE `linieachizitie` SET `IdAchizitie` = @p1, `IdProdus` = @p2, `Cantitate` = " +
-                "@p3, `Pret` = @p4 WHERE ((`IdAchizitie` = @p5) AND (`IdProdus` = @p6) AND (`Cant" +
-                "itate` = @p7) AND (`Pret` = @p8))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "IdAchizitie";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "IdProdus";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Cantitate";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
-            param.IsNullable = true;
-            param.SourceColumn = "Pret";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "IdAchizitie";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "IdProdus";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "Cantitate";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
-            param.DbType = global::System.Data.DbType.Double;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Double;
-            param.IsNullable = true;
-            param.SourceColumn = "Pret";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13354,7 +13328,20 @@ namespace Program_Librarie.LibrarieDataSetTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `IdAchizitie`, `IdProdus`, `Cantitate`, `Pret` FROM `linieachizitie`";
+            this._commandCollection[0].CommandText = @"SELECT l.`IdAchizitie`, t.IdTipProdus, t.TipProdus, l.`IdProdus`, c.Titlu AS NumeProdus, l.`Cantitate`, l.`Pret`, a.Data 
+FROM `linieachizitie` l
+INNER JOIN achizitie a ON l.IdAchizitie = a.IdAchizitie
+INNER JOIN produs p ON p.IdProdus = l.IdProdus AND p.IdTipProdus = 1 
+INNER JOIN tipprodus t ON p.IdTipProdus = t.IdTipProdus
+INNER JOIN carte c ON p.Produs = c.IdCarte
+UNION
+SELECT l.`IdAchizitie`, t.IdTipProdus, t.TipProdus, l.`IdProdus`, b.Denumire AS NumeProdus, l.`Cantitate`, l.`Pret`, a.Data 
+FROM `linieachizitie` l
+INNER JOIN achizitie a ON l.IdAchizitie = a.IdAchizitie
+INNER JOIN produs p ON p.IdProdus = l.IdProdus AND p.IdTipProdus = 2
+INNER JOIN tipprodus t ON p.IdTipProdus = t.IdTipProdus
+INNER JOIN birotica b ON p.Produs = b.IdBirotica
+";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13380,122 +13367,6 @@ namespace Program_Librarie.LibrarieDataSetTableAdapters {
             LibrarieDataSet.linieachizitieDataTable dataTable = new LibrarieDataSet.linieachizitieDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LibrarieDataSet.linieachizitieDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LibrarieDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "linieachizitie");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int p1, int p2, int p3, double p4) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(p2));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(p3));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((double)(p4));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int p1, int p2, int p3, double p4) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(p3));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((double)(p4));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int p1, int p2, int p3, double p4, int p5, int p6, int p7, double p8) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(p3));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((double)(p4));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(p5));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(p6));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(p8));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int p3, double p4, int p5, int p6, int p7, double p8) {
-            return this.Update(p5, p6, p3, p4, p5, p6, p7, p8);
         }
     }
     
@@ -16366,8 +16237,6 @@ INNER JOIN birotica b ON p.Produs = b.IdBirotica";
         
         private furnizorTableAdapter _furnizorTableAdapter;
         
-        private linieachizitieTableAdapter _linieachizitieTableAdapter;
-        
         private linievanzareTableAdapter _linievanzareTableAdapter;
         
         private produsTableAdapter _produsTableAdapter;
@@ -16496,20 +16365,6 @@ INNER JOIN birotica b ON p.Produs = b.IdBirotica";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public linieachizitieTableAdapter linieachizitieTableAdapter {
-            get {
-                return this._linieachizitieTableAdapter;
-            }
-            set {
-                this._linieachizitieTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public linievanzareTableAdapter linievanzareTableAdapter {
             get {
                 return this._linievanzareTableAdapter;
@@ -16622,10 +16477,6 @@ INNER JOIN birotica b ON p.Produs = b.IdBirotica";
                             && (this._furnizorTableAdapter.Connection != null))) {
                     return this._furnizorTableAdapter.Connection;
                 }
-                if (((this._linieachizitieTableAdapter != null) 
-                            && (this._linieachizitieTableAdapter.Connection != null))) {
-                    return this._linieachizitieTableAdapter.Connection;
-                }
                 if (((this._linievanzareTableAdapter != null) 
                             && (this._linievanzareTableAdapter.Connection != null))) {
                     return this._linievanzareTableAdapter.Connection;
@@ -16678,9 +16529,6 @@ INNER JOIN birotica b ON p.Produs = b.IdBirotica";
                     count = (count + 1);
                 }
                 if ((this._furnizorTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._linieachizitieTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._linievanzareTableAdapter != null)) {
@@ -16817,15 +16665,6 @@ INNER JOIN birotica b ON p.Produs = b.IdBirotica";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._linieachizitieTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.linieachizitie.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._linieachizitieTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -16932,14 +16771,6 @@ INNER JOIN birotica b ON p.Produs = b.IdBirotica";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._linieachizitieTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.linieachizitie.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._linieachizitieTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -16950,14 +16781,6 @@ INNER JOIN birotica b ON p.Produs = b.IdBirotica";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(LibrarieDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._linieachizitieTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.linieachizitie.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._linieachizitieTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._utilizatorTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.utilizator.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -17128,11 +16951,6 @@ INNER JOIN birotica b ON p.Produs = b.IdBirotica";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._linieachizitieTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._linieachizitieTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._linievanzareTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._linievanzareTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -17251,15 +17069,6 @@ INNER JOIN birotica b ON p.Produs = b.IdBirotica";
                     if (this._furnizorTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._furnizorTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._furnizorTableAdapter.Adapter);
-                    }
-                }
-                if ((this._linieachizitieTableAdapter != null)) {
-                    revertConnections.Add(this._linieachizitieTableAdapter, this._linieachizitieTableAdapter.Connection);
-                    this._linieachizitieTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(workConnection));
-                    this._linieachizitieTableAdapter.Transaction = ((global::MySql.Data.MySqlClient.MySqlTransaction)(workTransaction));
-                    if (this._linieachizitieTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._linieachizitieTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._linieachizitieTableAdapter.Adapter);
                     }
                 }
                 if ((this._linievanzareTableAdapter != null)) {
@@ -17392,10 +17201,6 @@ INNER JOIN birotica b ON p.Produs = b.IdBirotica";
                 if ((this._furnizorTableAdapter != null)) {
                     this._furnizorTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._furnizorTableAdapter]));
                     this._furnizorTableAdapter.Transaction = null;
-                }
-                if ((this._linieachizitieTableAdapter != null)) {
-                    this._linieachizitieTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._linieachizitieTableAdapter]));
-                    this._linieachizitieTableAdapter.Transaction = null;
                 }
                 if ((this._linievanzareTableAdapter != null)) {
                     this._linievanzareTableAdapter.Connection = ((global::MySql.Data.MySqlClient.MySqlConnection)(revertConnections[this._linievanzareTableAdapter]));
