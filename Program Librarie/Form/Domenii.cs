@@ -1,88 +1,125 @@
-﻿using Microsoft.VisualBasic;
+﻿using Program_Librarie.DB;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Program_Librarie.LibrarieDataSet;
 
 namespace Program_Librarie
 {
     public partial class Domenii : Form
     {
+        private int IdSelected;
+
         public Domenii()
         {
             InitializeComponent();
         }
 
-        Code.Domenii domenii;
-        private void paginăPrincipalăToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Domenii_Load(object sender, EventArgs e)
         {
-            domenii = new Code.Domenii();
+            // TODO: This line of code loads data into the 'librarieDataSet.domeniu' table. You can move, or remove it, as needed.
+            this.domeniuTableAdapter.Fill(this.librarieDataSet.domeniu);
+        }
 
-            domenii.Populare(listBox1);
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                var row = dataGridView1.Rows[e.RowIndex];
+                dynamic interimar = row.DataBoundItem;
+                var rowDetaliu = (domeniuRow)interimar.Row;
+                IdSelected = rowDetaliu.IdDomeniu;
+                tbNume.Text = rowDetaliu.Domeniu;
+            }
         }
 
         private void btnAdaugare_Click(object sender, EventArgs e)
         {
-            string nume;
-            nume = Interaction.InputBox("Introduceți numele complet al domeniului pe care doriți să îl adăugați.", "Adăugare domeniu", "");
-
-            if (nume != "")
+            var currentEdit = GetEditItem();
+            using (LabDataContext lb = new LabDataContext())
             {
-                domenii.Insert(nume);
-                listBox1.Items.Clear();
-                domenii.Populare(listBox1);
+                if (!lb.domeniu.Any(x => x.Domeniu1.Equals(currentEdit.Domeniu, StringComparison.OrdinalIgnoreCase)))
+                {
+                    var newAutor = new domeniu()
+                    {
+                        Domeniu1 = currentEdit.Domeniu,
+                    };
+                    lb.domeniu.Add(newAutor);
+                    lb.SaveChanges();
+                    UpdateGrid("Adauga");
+                }
+                else
+                {
+                    MessageBox.Show("Exista deja domeniu cu acest nume.");
+                }
             }
 
         }
 
         private void btnModifica_Click(object sender, EventArgs e)
         {
-            string intrebare = "Introduceti numele complet al domeniului pe care doriti sa il modificati. Domeniul selectat este " + domenii.details.Nume;
-            string nume = Interaction.InputBox(intrebare, "Modificare domeniu", "");
-
-            if (nume != "")
+            var currentEdit = GetEditItem();
+            using (LabDataContext lb = new LabDataContext())
             {
-                domenii.UpdateIndex(nume);
-                listBox1.Items.Clear();
-                domenii.Populare(listBox1);
+                var domeniu = lb.domeniu.FirstOrDefault(x => x.IdDomeniu == currentEdit.Id);
+                domeniu.Domeniu1 = currentEdit.Domeniu;
+                lb.SaveChanges();
+                UpdateGrid("Modificat");
             }
-
         }
 
         private void btnStergere_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem != null)
+            var currentEdit = GetEditItem();
+            using (LabDataContext lb = new LabDataContext())
             {
-                var mb = MessageBox.Show(this, $"Sunteti sigur ca doriti sa stergeti domeniul { domenii.details.Nume }?", "Warning", MessageBoxButtons.YesNo);
-
-                if (mb == DialogResult.Yes)
+                if (!lb.carte.Any(x => x.IdAutor == currentEdit.Id))
                 {
-                    domenii.Delete();
-                    listBox1.Items.Clear();
-                    domenii.Populare(listBox1);
+                    var domeniu = lb.domeniu.FirstOrDefault(x => x.IdDomeniu == currentEdit.Id);
+                    lb.domeniu.Remove(domeniu);
+                    lb.SaveChanges();
+                    UpdateGrid("Sterge");
+                }
+                else
+                {
+                    MessageBox.Show("Exista carti care folosesc acest domeniu. Nu puteti sterge domeniul.");
                 }
             }
-            else
-            {
-                MessageBox.Show("Selecteaza un domeniu");
-            }
-
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private class EditItem
         {
+            public int Id { get; set; }
+            public string Domeniu { get; set; }
+        }
 
-            domenii.Update(listBox1);
+        private EditItem GetEditItem()
+        {
+            var newEdit = new EditItem()
+            {
+                Id = IdSelected,
+                Domeniu = tbNume.Text,
+            };
+            return newEdit;
+        }
+
+        private void UpdateGrid(string comanda)
+        {
+            switch (comanda)
+            {
+                case "Sterge":
+                    MessageBox.Show("Domeniu sters.");
+                    break;
+                case "Adauga":
+                    MessageBox.Show("Domeniu adaugat.");
+                    break;
+                case "Modifica":
+                    MessageBox.Show("Domeniu salvat.");
+                    break;
+                default:
+                    break;
+            }
+            this.domeniuTableAdapter.Fill(this.librarieDataSet.domeniu);
         }
     }
 }

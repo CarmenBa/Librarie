@@ -101,5 +101,10 @@ namespace Program_Librarie
             FacturiPlata m = new FacturiPlata();
             m.Show();
         }
+
+        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

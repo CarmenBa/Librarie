@@ -350,6 +350,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Principal";
             this.Text = "Principal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);

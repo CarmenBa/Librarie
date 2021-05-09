@@ -246,7 +246,7 @@ namespace Program_Librarie
             cmbEditura.Visible = value;
         }
 
-        public class EditItem
+        private class EditItem
         {
             public int Id { get; set; }
             public string TipProdus { get; set; }
@@ -262,6 +262,7 @@ namespace Program_Librarie
             public string Domeniu { get; set; }
             public string Editura { get; set; }
         }
+
         private EditItem GetEditItem()
         {
             var newEdit = new EditItem()

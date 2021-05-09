@@ -58,29 +58,29 @@
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.librarieDataSet = new Program_Librarie.LibrarieDataSet();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientTableAdapter = new Program_Librarie.LibrarieDataSetTableAdapters.clientTableAdapter();
             this.idClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.varstaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.librarieDataSet = new Program_Librarie.LibrarieDataSet();
+            this.clientTableAdapter = new Program_Librarie.LibrarieDataSetTableAdapters.clientTableAdapter();
             this.tbVarsta = new System.Windows.Forms.NumericUpDown();
             this.tbNume = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVarsta)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(781, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(779, 26);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(172, 170);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -91,7 +91,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(594, 199);
+            this.label1.Location = new System.Drawing.Point(594, 223);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 24);
@@ -102,7 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(594, 233);
+            this.label2.Location = new System.Drawing.Point(594, 257);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 24);
@@ -113,7 +113,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(594, 262);
+            this.label3.Location = new System.Drawing.Point(594, 286);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 24);
@@ -127,8 +127,8 @@
             this.cmbSex.Items.AddRange(new object[] {
             "masculin",
             "feminin"});
-            this.cmbSex.Location = new System.Drawing.Point(732, 262);
-            this.cmbSex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSex.Location = new System.Drawing.Point(732, 286);
+            this.cmbSex.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSex.Name = "cmbSex";
             this.cmbSex.Size = new System.Drawing.Size(219, 28);
             this.cmbSex.TabIndex = 7;
@@ -139,7 +139,7 @@
             this.btnStergere.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnStergere.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStergere.Location = new System.Drawing.Point(781, 363);
-            this.btnStergere.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnStergere.Margin = new System.Windows.Forms.Padding(2);
             this.btnStergere.Name = "btnStergere";
             this.btnStergere.Size = new System.Drawing.Size(170, 38);
             this.btnStergere.TabIndex = 72;
@@ -153,7 +153,7 @@
             this.btnModifica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifica.Location = new System.Drawing.Point(598, 414);
-            this.btnModifica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModifica.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifica.Name = "btnModifica";
             this.btnModifica.Size = new System.Drawing.Size(170, 38);
             this.btnModifica.TabIndex = 69;
@@ -167,7 +167,7 @@
             this.btnRenuntare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRenuntare.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRenuntare.Location = new System.Drawing.Point(781, 414);
-            this.btnRenuntare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRenuntare.Margin = new System.Windows.Forms.Padding(2);
             this.btnRenuntare.Name = "btnRenuntare";
             this.btnRenuntare.Size = new System.Drawing.Size(170, 38);
             this.btnRenuntare.TabIndex = 68;
@@ -181,7 +181,7 @@
             this.btnAdaugare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdaugare.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdaugare.Location = new System.Drawing.Point(598, 363);
-            this.btnAdaugare.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdaugare.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdaugare.Name = "btnAdaugare";
             this.btnAdaugare.Size = new System.Drawing.Size(170, 38);
             this.btnAdaugare.TabIndex = 67;
@@ -312,8 +312,8 @@
             // tbEmail
             // 
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmail.Location = new System.Drawing.Point(732, 294);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmail.Location = new System.Drawing.Point(732, 318);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(219, 26);
             this.tbEmail.TabIndex = 74;
@@ -322,7 +322,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(594, 295);
+            this.label4.Location = new System.Drawing.Point(594, 319);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 24);
@@ -348,20 +348,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(557, 411);
             this.dataGridView1.TabIndex = 75;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // librarieDataSet
-            // 
-            this.librarieDataSet.DataSetName = "LibrarieDataSet";
-            this.librarieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientBindingSource
-            // 
-            this.clientBindingSource.DataMember = "client";
-            this.clientBindingSource.DataSource = this.librarieDataSet;
-            // 
-            // clientTableAdapter
-            // 
-            this.clientTableAdapter.ClearBeforeFill = true;
             // 
             // idClientDataGridViewTextBoxColumn
             // 
@@ -399,11 +385,24 @@
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataMember = "client";
+            this.clientBindingSource.DataSource = this.librarieDataSet;
+            // 
+            // librarieDataSet
+            // 
+            this.librarieDataSet.DataSetName = "LibrarieDataSet";
+            this.librarieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientTableAdapter
+            // 
+            this.clientTableAdapter.ClearBeforeFill = true;
+            // 
             // tbVarsta
             // 
-            this.tbVarsta.DecimalPlaces = 2;
             this.tbVarsta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbVarsta.Location = new System.Drawing.Point(732, 231);
+            this.tbVarsta.Location = new System.Drawing.Point(732, 255);
             this.tbVarsta.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -416,7 +415,7 @@
             // tbNume
             // 
             this.tbNume.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNume.Location = new System.Drawing.Point(732, 200);
+            this.tbNume.Location = new System.Drawing.Point(732, 224);
             this.tbNume.Margin = new System.Windows.Forms.Padding(2);
             this.tbNume.Name = "tbNume";
             this.tbNume.Size = new System.Drawing.Size(219, 26);
@@ -444,7 +443,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AdaugaClient";
             this.Text = "AdaugaClient";
             this.Load += new System.EventHandler(this.AdaugaClient_Load);
@@ -452,8 +451,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbVarsta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

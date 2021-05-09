@@ -1,12 +1,6 @@
-﻿using Program_Librarie.Code;
+﻿using Program_Librarie.DB;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Program_Librarie.LibrarieDataSet;
 
@@ -29,6 +23,9 @@ namespace Program_Librarie
         {
             // TODO: This line of code loads data into the 'librarieDataSet.client' table. You can move, or remove it, as needed.
             this.clientTableAdapter.Fill(this.librarieDataSet.client);
+            cmbSex.Items.Clear();
+            cmbSex.Items.Add("masculin");
+            cmbSex.Items.Add("feminin");
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -45,122 +42,98 @@ namespace Program_Librarie
                 tbEmail.Text = rowDetaliu.Email;
             }
         }
-        private void btnModifica_Click(object sender, EventArgs e)
-        {
-            if (btnModifica.Text == "Salvează")
-            {
-                ClientDetails details = new ClientDetails();
-                details.Nume = cmbNume.Text;
-                details.Varsta = txtVarsta.Text;
-                details.Sex = cmbSex.Text;
-                details.Email = tbEmail.Text;
 
-                client.Insert(details);
-                client.Populare(cmbNume);
-                MessageBox.Show("A fost adaugat");
-
-                btnModifica.Text = "Modifică";
-            }
-
-            if (btnModifica.Text == "Modifică")
-            {
-                if (cmbNume.Text == client.details.Nume
-                    && txtVarsta.Text == client.details.Varsta
-                    && cmbSex.Text == client.details.Sex
-                    && tbEmail.Text == client.details.Email)
-                {
-                    //MessageBox.Show("Nu ati introdus modificari");
-                }
-                else
-                {
-                    client.details.Nume = cmbNume.Text;
-                    client.details.Varsta = txtVarsta.Text;
-                    client.details.Sex = cmbSex.Text;
-                    client.details.Email = tbEmail.Text;
-
-                    client.UpdateIndex();
-                    UpdateFields();
-                    client.Populare(cmbNume);
-                    MessageBox.Show("Modificarea a fost efectuată");
-                }
-            }
-        }
         private void btnAdaugare_Click(object sender, EventArgs e)
         {
-            btnModifica.Text = "Salvează";
-            cmbNume.Text = "";
-            txtVarsta.Text = "";
-            cmbSex.Text = "";
-            tbEmail.Text = "";
+            var currentEdit = GetEditItem();
+            using (LabDataContext lb = new LabDataContext())
+            {
+                var newClient = new client()
+                {
+                    Nume = currentEdit.Nume,
+                    Varsta = (int)currentEdit.Varsta,
+                    Sex = currentEdit.Sex,
+                    Email = currentEdit.Email
+                };
+                lb.client.Add(newClient);
+                lb.SaveChanges();
+                UpdateGrid("Adauga");
+            }
         }
 
-        private void btnRenuntare_Click(object sender, EventArgs e)
+        private void btnModifica_Click(object sender, EventArgs e)
         {
-            btnModifica.Text = "Modifică";
-            UpdateFields();
+            var currentEdit = GetEditItem();
+            using (LabDataContext lb = new LabDataContext())
+            {
+                var client = lb.client.FirstOrDefault(x => x.IdClient == currentEdit.Id);
+                client.Nume = currentEdit.Nume;
+                client.Varsta = (int)currentEdit.Varsta;
+                client.Sex = currentEdit.Sex;
+                client.Email = currentEdit.Email;
+                lb.SaveChanges();
+                UpdateGrid("Modificat");
+            }
         }
 
         private void btnStergere_Click(object sender, EventArgs e)
         {
-            client.Delete();
-            this.UpdateFields();
-            client.Populare(cmbNume);
-            MessageBox.Show("A fost sters");
+            var currentEdit = GetEditItem();
+            using (LabDataContext lb = new LabDataContext())
+            {
+                var client = lb.client.FirstOrDefault(x => x.IdClient == currentEdit.Id);
+                lb.client.Remove(client);
+                lb.SaveChanges();
+                UpdateGrid("Sterge");
+            }
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void btnRenuntare_Click(object sender, EventArgs e)
         {
-            client.Next();
-
-            UpdateFields();
+            this.Close();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            client.Back();
 
-            UpdateFields();
-        }
-
-        private void cmbDenumire_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbNume_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbNume.SelectedItem == null)
-                return;
-
-            client.Selected(cmbNume);
-            UpdateFields();
-        }
-
-        private void clientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.clientBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.librarieDataSet);
-
-        }
 
         private void UpdateGrid(string comanda)
         {
             switch (comanda)
             {
                 case "Sterge":
-                    MessageBox.Show("Produs sters.");
+                    MessageBox.Show("Client sters.");
                     break;
                 case "Adauga":
-                    MessageBox.Show("Produs adaugat.");
+                    MessageBox.Show("Client adaugat.");
                     break;
                 case "Modifica":
-                    MessageBox.Show("Produs modificat.");
+                    MessageBox.Show("Client salvat.");
                     break;
                 default:
                     break;
             }
             this.clientTableAdapter.Fill(this.librarieDataSet.client);
+        }
+
+        private class EditItem
+        {
+            public int Id { get; set; }
+            public string Nume { get; set; }
+            public decimal Varsta { get; set; }
+            public string Sex { get; set; }
+            public string Email { get; set; }
+        }
+
+        private EditItem GetEditItem()
+        {
+            var newEdit = new EditItem()
+            {
+                Id = IdSelected,
+                Nume = tbNume.Text,
+                Varsta = tbVarsta.Value,
+                Sex = cmbSex.Text,
+                Email = tbEmail.Text
+            };
+            return newEdit;
         }
 
     }

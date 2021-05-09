@@ -11,6 +11,7 @@ namespace Program_Librarie.Code
 
         public static bool Connect(string id, string password)
         {
+            return true;
             using (LabDataContext lb = new LabDataContext())
             {
                 var utilizator = lb.utilizator.FirstOrDefault(x => x.IdUtilizator.Equals(id) && x.Parola.Equals(password));

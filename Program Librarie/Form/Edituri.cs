@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using Program_Librarie.DB;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,77 +9,124 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Program_Librarie.LibrarieDataSet;
 
 namespace Program_Librarie
 {
     public partial class Edituri : Form
     {
+        private int IdSelected;
+
         public Edituri()
         {
             InitializeComponent();
         }
 
-        Code.Edituri edituri;
 
         private void Edituri_Load(object sender, EventArgs e)
         {
-            edituri = new Code.Edituri();
+            // TODO: This line of code loads data into the 'librarieDataSet.editura' table. You can move, or remove it, as needed.
+            this.edituraTableAdapter.Fill(this.librarieDataSet.editura);
+        }
 
-            edituri.Populare(listBox1);
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                var row = dataGridView1.Rows[e.RowIndex];
+                dynamic interimar = row.DataBoundItem;
+                var rowDetaliu = (edituraRow)interimar.Row;
+                IdSelected = rowDetaliu.IdEditura;
+                tbNume.Text = rowDetaliu.Nume;
+            }
         }
 
         private void btnAdaugare_Click(object sender, EventArgs e)
         {
-            string nume;
-            nume = Interaction.InputBox("Introduceți numele complet al editurii pe care doriți să o adăugați.", "Adăugare editura", "");
-
-            if (nume != "")
+            var currentEdit = GetEditItem();
+            using (LabDataContext lb = new LabDataContext())
             {
-                edituri.Insert(nume);
-                listBox1.Items.Clear();
-                edituri.Populare(listBox1);
+                if (!lb.editura.Any(x => x.Nume.Equals(currentEdit.Nume, StringComparison.OrdinalIgnoreCase)))
+                {
+                    var newEditura = new editura()
+                    {
+                        Nume = currentEdit.Nume,
+                    };
+                    lb.editura.Add(newEditura);
+                    lb.SaveChanges();
+                    UpdateGrid("Adauga");
+                }
+                else
+                {
+                    MessageBox.Show("Exista deja editura cu acest nume.");
+                }
             }
-
         }
 
         private void btnModifica_Click(object sender, EventArgs e)
         {
-            string intrebare = "Introduceti numele complet al editurii pe care doriti sa o modificati. Editura selectata este " + edituri.details.Nume;
-            string nume = Interaction.InputBox(intrebare, "Modificare editura", "");
-
-            if (nume != "")
+            var currentEdit = GetEditItem();
+            using (LabDataContext lb = new LabDataContext())
             {
-                edituri.UpdateIndex(nume);
-                listBox1.Items.Clear();
-                edituri.Populare(listBox1);
+                var editura = lb.editura.FirstOrDefault(x => x.IdEditura == currentEdit.Id);
+                editura.Nume = currentEdit.Nume;
+                lb.SaveChanges();
+                UpdateGrid("Modificat");
             }
-
         }
 
         private void btnStergere_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem != null)
+            var currentEdit = GetEditItem();
+            using (LabDataContext lb = new LabDataContext())
             {
-                var mb = MessageBox.Show(this, $"Sunteti sigur ca doriti sa stergeti editura { edituri.details.Nume }?", "Warning", MessageBoxButtons.YesNo);
-
-                if (mb == DialogResult.Yes)
+                if (!lb.carte.Any(x => x.IdEditura == currentEdit.Id))
                 {
-                    edituri.Delete();
-                    listBox1.Items.Clear();
-                    edituri.Populare(listBox1);
+                    var editura = lb.editura.FirstOrDefault(x => x.IdEditura == currentEdit.Id);
+                    lb.editura.Remove(editura);
+                    lb.SaveChanges();
+                    UpdateGrid("Sterge");
+                }
+                else
+                {
+                    MessageBox.Show("Exista carti care folosesc acest editura. Nu puteti sterge edituraul.\r\nVa rugam sa schimbati edituraii.");
                 }
             }
-            else
-            {
-                MessageBox.Show("Selecteaza o editura");
-            }
-
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private class EditItem
         {
+            public int Id { get; set; }
+            public string Nume { get; set; }
+        }
 
-            edituri.Update(listBox1);
+        private EditItem GetEditItem()
+        {
+            var newEdit = new EditItem()
+            {
+                Id = IdSelected,
+                Nume = tbNume.Text,
+            };
+            return newEdit;
+        }
+
+        private void UpdateGrid(string comanda)
+        {
+            switch (comanda)
+            {
+                case "Sterge":
+                    MessageBox.Show("Editura sters.");
+                    break;
+                case "Adauga":
+                    MessageBox.Show("Editura adaugat.");
+                    break;
+                case "Modifica":
+                    MessageBox.Show("Editura salvat.");
+                    break;
+                default:
+                    break;
+            }
+            this.edituraTableAdapter.Fill(this.librarieDataSet.editura);
         }
     }
 }

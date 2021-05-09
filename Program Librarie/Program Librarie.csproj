@@ -101,7 +101,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Code\Autori.cs" />
     <Compile Include="Code\Birotica.cs" />
     <Compile Include="Code\Client.cs" />
@@ -198,12 +197,6 @@
     </Compile>
     <Compile Include="Form\Autori.Designer.cs">
       <DependentUpon>Autori.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\Birotica.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\Birotica.Designer.cs">
-      <DependentUpon>Birotica.cs</DependentUpon>
     </Compile>
     <Compile Include="Form\Domenii.cs">
       <SubType>Form</SubType>
@@ -305,9 +298,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Autori.resx">
       <DependentUpon>Autori.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\Birotica.resx">
-      <DependentUpon>Birotica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Domenii.resx">
       <DependentUpon>Domenii.cs</DependentUpon>
