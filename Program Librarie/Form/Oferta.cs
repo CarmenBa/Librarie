@@ -1,13 +1,7 @@
-﻿using Program_Librarie.Code;
-using Program_Librarie.DB;
+﻿using Program_Librarie.DB;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Program_Librarie.LibrarieDataSet;
 
@@ -144,7 +138,7 @@ namespace Program_Librarie
                     lb.oferta.Remove(oferta);
                     lb.SaveChanges();
 
-                    UpdateOfertaGrid("Sterge");
+                    UpdateOfertaGrid("");
                 }
             }
         }
@@ -181,6 +175,7 @@ namespace Program_Librarie
                     MessageBox.Show("Oferta modificata.");
                     break;
                 default:
+                    MessageBox.Show("Terminat");
                     break;
             }
             this.ofertaTableAdapter.Fill(this.librarieDataSet.oferta);

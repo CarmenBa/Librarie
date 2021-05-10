@@ -28,420 +28,652 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Achizitii));
-            this.btnStergere = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnProdusStergere = new System.Windows.Forms.Button();
+            this.btnProdusModifica = new System.Windows.Forms.Button();
+            this.btnProdusAdaugare = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvLinieAchizitie = new System.Windows.Forms.DataGridView();
+            this.idAchizitieDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProdusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idTipProdusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipProdusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeProdusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantitateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pretDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linieachizitieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.librarieDataSet = new Program_Librarie.LibrarieDataSet();
+            this.tbCantitate = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnModifica = new System.Windows.Forms.Button();
-            this.btnRenuntare = new System.Windows.Forms.Button();
-            this.btnAdaugare = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.paginăPrincipalăToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adaugăToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cărțiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.edituriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cărțiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.echipamenteDeBiroticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cliențiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.furnizoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rapoarteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vânzăriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stocuriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solduriFurnizoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cărțiToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajutorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbPret = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cmbTipProdus = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbProdus = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbNrDoc = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbSerie = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtData = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dgvAchizitie = new System.Windows.Forms.DataGridView();
+            this.idAchizitieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFurnizorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.furnizorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nrDocumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serieDocumentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.achizitieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cmbFurnizor = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnAchizitieModifica = new System.Windows.Forms.Button();
+            this.btnAchizitieAdaugare = new System.Windows.Forms.Button();
+            this.btnAchizitieStergere = new System.Windows.Forms.Button();
+            this.achizitieTableAdapter = new Program_Librarie.LibrarieDataSetTableAdapters.achizitieTableAdapter();
+            this.linieachizitieTableAdapter = new Program_Librarie.LibrarieDataSetTableAdapters.linieachizitieTableAdapter();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLinieAchizitie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.linieachizitieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCantitate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPret)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbNrDoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAchizitie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.achizitieBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnStergere
+            // btnReset
             // 
-            this.btnStergere.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnStergere.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnStergere.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStergere.Location = new System.Drawing.Point(771, 496);
-            this.btnStergere.Name = "btnStergere";
-            this.btnStergere.Size = new System.Drawing.Size(226, 47);
-            this.btnStergere.TabIndex = 66;
-            this.btnStergere.Text = "Șterge";
-            this.btnStergere.UseVisualStyleBackColor = false;
+            this.btnReset.BackColor = System.Drawing.Color.IndianRed;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(20, 445);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(170, 38);
+            this.btnReset.TabIndex = 113;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // pictureBox2
+            // btnProdusStergere
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(795, 192);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 62);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 65;
-            this.pictureBox2.TabStop = false;
+            this.btnProdusStergere.BackColor = System.Drawing.Color.IndianRed;
+            this.btnProdusStergere.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProdusStergere.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProdusStergere.Location = new System.Drawing.Point(955, 168);
+            this.btnProdusStergere.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProdusStergere.Name = "btnProdusStergere";
+            this.btnProdusStergere.Size = new System.Drawing.Size(138, 38);
+            this.btnProdusStergere.TabIndex = 112;
+            this.btnProdusStergere.Text = "Șterge";
+            this.btnProdusStergere.UseVisualStyleBackColor = false;
+            this.btnProdusStergere.Click += new System.EventHandler(this.btnProdusStergere_Click);
             // 
-            // pictureBox1
+            // btnProdusModifica
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(905, 192);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 62);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 64;
-            this.pictureBox1.TabStop = false;
+            this.btnProdusModifica.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnProdusModifica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProdusModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProdusModifica.Location = new System.Drawing.Point(813, 168);
+            this.btnProdusModifica.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProdusModifica.Name = "btnProdusModifica";
+            this.btnProdusModifica.Size = new System.Drawing.Size(138, 38);
+            this.btnProdusModifica.TabIndex = 111;
+            this.btnProdusModifica.Text = "Modifică";
+            this.btnProdusModifica.UseVisualStyleBackColor = false;
+            this.btnProdusModifica.Click += new System.EventHandler(this.btnProdusModifica_Click);
             // 
-            // dateTimePicker1
+            // btnProdusAdaugare
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial Unicode MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(844, 132);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(153, 32);
-            this.dateTimePicker1.TabIndex = 63;
+            this.btnProdusAdaugare.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnProdusAdaugare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProdusAdaugare.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProdusAdaugare.Location = new System.Drawing.Point(671, 168);
+            this.btnProdusAdaugare.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProdusAdaugare.Name = "btnProdusAdaugare";
+            this.btnProdusAdaugare.Size = new System.Drawing.Size(138, 38);
+            this.btnProdusAdaugare.TabIndex = 110;
+            this.btnProdusAdaugare.Text = "Adaugă";
+            this.btnProdusAdaugare.UseVisualStyleBackColor = false;
+            this.btnProdusAdaugare.Click += new System.EventHandler(this.btnProdusAdaugare_Click);
             // 
-            // textBox4
+            // groupBox2
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial Unicode MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(844, 30);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(153, 32);
-            this.textBox4.TabIndex = 62;
+            this.groupBox2.Controls.Add(this.dgvLinieAchizitie);
+            this.groupBox2.Controls.Add(this.tbCantitate);
+            this.groupBox2.Controls.Add(this.btnProdusStergere);
+            this.groupBox2.Controls.Add(this.btnProdusModifica);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.btnProdusAdaugare);
+            this.groupBox2.Controls.Add(this.tbPret);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.cmbTipProdus);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.cmbProdus);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox2.Location = new System.Drawing.Point(14, 218);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1105, 222);
+            this.groupBox2.TabIndex = 108;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Produs";
+            // 
+            // dgvLinieAchizitie
+            // 
+            this.dgvLinieAchizitie.AllowUserToAddRows = false;
+            this.dgvLinieAchizitie.AllowUserToDeleteRows = false;
+            this.dgvLinieAchizitie.AutoGenerateColumns = false;
+            this.dgvLinieAchizitie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLinieAchizitie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idAchizitieDataGridViewTextBoxColumn1,
+            this.idProdusDataGridViewTextBoxColumn,
+            this.idTipProdusDataGridViewTextBoxColumn,
+            this.dataDataGridViewTextBoxColumn1,
+            this.tipProdusDataGridViewTextBoxColumn,
+            this.numeProdusDataGridViewTextBoxColumn,
+            this.cantitateDataGridViewTextBoxColumn,
+            this.pretDataGridViewTextBoxColumn});
+            this.dgvLinieAchizitie.DataSource = this.linieachizitieBindingSource;
+            this.dgvLinieAchizitie.Location = new System.Drawing.Point(6, 25);
+            this.dgvLinieAchizitie.Name = "dgvLinieAchizitie";
+            this.dgvLinieAchizitie.ReadOnly = true;
+            this.dgvLinieAchizitie.Size = new System.Drawing.Size(657, 181);
+            this.dgvLinieAchizitie.TabIndex = 113;
+            this.dgvLinieAchizitie.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLinieAchizitie_CellClick);
+            // 
+            // idAchizitieDataGridViewTextBoxColumn1
+            // 
+            this.idAchizitieDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idAchizitieDataGridViewTextBoxColumn1.DataPropertyName = "IdAchizitie";
+            this.idAchizitieDataGridViewTextBoxColumn1.HeaderText = "IdAchizitie";
+            this.idAchizitieDataGridViewTextBoxColumn1.Name = "idAchizitieDataGridViewTextBoxColumn1";
+            this.idAchizitieDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idAchizitieDataGridViewTextBoxColumn1.Width = 80;
+            // 
+            // idProdusDataGridViewTextBoxColumn
+            // 
+            this.idProdusDataGridViewTextBoxColumn.DataPropertyName = "IdProdus";
+            this.idProdusDataGridViewTextBoxColumn.HeaderText = "IdProdus";
+            this.idProdusDataGridViewTextBoxColumn.Name = "idProdusDataGridViewTextBoxColumn";
+            this.idProdusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idProdusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idTipProdusDataGridViewTextBoxColumn
+            // 
+            this.idTipProdusDataGridViewTextBoxColumn.DataPropertyName = "IdTipProdus";
+            this.idTipProdusDataGridViewTextBoxColumn.HeaderText = "IdTipProdus";
+            this.idTipProdusDataGridViewTextBoxColumn.Name = "idTipProdusDataGridViewTextBoxColumn";
+            this.idTipProdusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idTipProdusDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dataDataGridViewTextBoxColumn1
+            // 
+            this.dataDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataDataGridViewTextBoxColumn1.DataPropertyName = "Data";
+            this.dataDataGridViewTextBoxColumn1.HeaderText = "Data";
+            this.dataDataGridViewTextBoxColumn1.Name = "dataDataGridViewTextBoxColumn1";
+            this.dataDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataDataGridViewTextBoxColumn1.Width = 55;
+            // 
+            // tipProdusDataGridViewTextBoxColumn
+            // 
+            this.tipProdusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tipProdusDataGridViewTextBoxColumn.DataPropertyName = "TipProdus";
+            this.tipProdusDataGridViewTextBoxColumn.HeaderText = "TipProdus";
+            this.tipProdusDataGridViewTextBoxColumn.Name = "tipProdusDataGridViewTextBoxColumn";
+            this.tipProdusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipProdusDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // numeProdusDataGridViewTextBoxColumn
+            // 
+            this.numeProdusDataGridViewTextBoxColumn.DataPropertyName = "NumeProdus";
+            this.numeProdusDataGridViewTextBoxColumn.HeaderText = "NumeProdus";
+            this.numeProdusDataGridViewTextBoxColumn.Name = "numeProdusDataGridViewTextBoxColumn";
+            this.numeProdusDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeProdusDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // cantitateDataGridViewTextBoxColumn
+            // 
+            this.cantitateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cantitateDataGridViewTextBoxColumn.DataPropertyName = "Cantitate";
+            this.cantitateDataGridViewTextBoxColumn.HeaderText = "Cantitate";
+            this.cantitateDataGridViewTextBoxColumn.Name = "cantitateDataGridViewTextBoxColumn";
+            this.cantitateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantitateDataGridViewTextBoxColumn.Width = 74;
+            // 
+            // pretDataGridViewTextBoxColumn
+            // 
+            this.pretDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pretDataGridViewTextBoxColumn.DataPropertyName = "Pret";
+            this.pretDataGridViewTextBoxColumn.HeaderText = "Pret";
+            this.pretDataGridViewTextBoxColumn.Name = "pretDataGridViewTextBoxColumn";
+            this.pretDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pretDataGridViewTextBoxColumn.Width = 51;
+            // 
+            // linieachizitieBindingSource
+            // 
+            this.linieachizitieBindingSource.DataMember = "linieachizitie";
+            this.linieachizitieBindingSource.DataSource = this.librarieDataSet;
+            // 
+            // librarieDataSet
+            // 
+            this.librarieDataSet.DataSetName = "LibrarieDataSet";
+            this.librarieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbCantitate
+            // 
+            this.tbCantitate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbCantitate.Location = new System.Drawing.Point(810, 121);
+            this.tbCantitate.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.tbCantitate.Name = "tbCantitate";
+            this.tbCantitate.Size = new System.Drawing.Size(283, 26);
+            this.tbCantitate.TabIndex = 102;
+            this.tbCantitate.ThousandsSeparator = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(766, 31);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(673, 121);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 26);
-            this.label5.TabIndex = 61;
-            this.label5.Text = "Serie";
+            this.label5.Size = new System.Drawing.Size(81, 24);
+            this.label5.TabIndex = 101;
+            this.label5.Text = "Cantitate";
             // 
-            // textBox3
+            // tbPret
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial Unicode MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(844, 80);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(153, 32);
-            this.textBox3.TabIndex = 60;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(766, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 26);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "Numar";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(766, 136);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 26);
-            this.label2.TabIndex = 58;
-            this.label2.Text = "Dată";
-            // 
-            // btnModifica
-            // 
-            this.btnModifica.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnModifica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnModifica.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifica.Location = new System.Drawing.Point(771, 275);
-            this.btnModifica.Name = "btnModifica";
-            this.btnModifica.Size = new System.Drawing.Size(226, 47);
-            this.btnModifica.TabIndex = 57;
-            this.btnModifica.Text = "Modifică";
-            this.btnModifica.UseVisualStyleBackColor = false;
-            // 
-            // btnRenuntare
-            // 
-            this.btnRenuntare.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnRenuntare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRenuntare.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRenuntare.Location = new System.Drawing.Point(771, 423);
-            this.btnRenuntare.Name = "btnRenuntare";
-            this.btnRenuntare.Size = new System.Drawing.Size(226, 47);
-            this.btnRenuntare.TabIndex = 56;
-            this.btnRenuntare.Text = "Renunță";
-            this.btnRenuntare.UseVisualStyleBackColor = false;
-            // 
-            // btnAdaugare
-            // 
-            this.btnAdaugare.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAdaugare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAdaugare.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdaugare.Location = new System.Drawing.Point(771, 349);
-            this.btnAdaugare.Name = "btnAdaugare";
-            this.btnAdaugare.Size = new System.Drawing.Size(226, 47);
-            this.btnAdaugare.TabIndex = 55;
-            this.btnAdaugare.Text = "Adaugă";
-            this.btnAdaugare.UseVisualStyleBackColor = false;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(143, 49);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(291, 34);
-            this.comboBox2.TabIndex = 54;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(143, 114);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(291, 34);
-            this.textBox1.TabIndex = 53;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 113);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 33);
-            this.label1.TabIndex = 52;
-            this.label1.Text = "CUI";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 33);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Furnizor";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.paginăPrincipalăToolStripMenuItem,
-            this.adaugăToolStripMenuItem,
-            this.rapoarteToolStripMenuItem,
-            this.ajutorToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1035, 28);
-            this.menuStrip1.TabIndex = 46;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // paginăPrincipalăToolStripMenuItem
-            // 
-            this.paginăPrincipalăToolStripMenuItem.Name = "paginăPrincipalăToolStripMenuItem";
-            this.paginăPrincipalăToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
-            this.paginăPrincipalăToolStripMenuItem.Text = "Acasă";
-            this.paginăPrincipalăToolStripMenuItem.Click += new System.EventHandler(this.paginăPrincipalăToolStripMenuItem_Click);
-            // 
-            // adaugăToolStripMenuItem
-            // 
-            this.adaugăToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cărțiToolStripMenuItem,
-            this.echipamenteDeBiroticaToolStripMenuItem,
-            this.cliențiToolStripMenuItem,
-            this.furnizoriToolStripMenuItem});
-            this.adaugăToolStripMenuItem.Name = "adaugăToolStripMenuItem";
-            this.adaugăToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.adaugăToolStripMenuItem.Text = "Adaugă";
-            // 
-            // cărțiToolStripMenuItem
-            // 
-            this.cărțiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autoriToolStripMenuItem,
-            this.edituriToolStripMenuItem,
-            this.cărțiToolStripMenuItem1});
-            this.cărțiToolStripMenuItem.Name = "cărțiToolStripMenuItem";
-            this.cărțiToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.cărțiToolStripMenuItem.Text = "Cărți și despre cărți";
-            // 
-            // autoriToolStripMenuItem
-            // 
-            this.autoriToolStripMenuItem.Name = "autoriToolStripMenuItem";
-            this.autoriToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
-            this.autoriToolStripMenuItem.Text = "Autori";
-            // 
-            // edituriToolStripMenuItem
-            // 
-            this.edituriToolStripMenuItem.Name = "edituriToolStripMenuItem";
-            this.edituriToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
-            this.edituriToolStripMenuItem.Text = "Edituri";
-            // 
-            // cărțiToolStripMenuItem1
-            // 
-            this.cărțiToolStripMenuItem1.Name = "cărțiToolStripMenuItem1";
-            this.cărțiToolStripMenuItem1.Size = new System.Drawing.Size(127, 26);
-            this.cărțiToolStripMenuItem1.Text = "Cărți";
-            // 
-            // echipamenteDeBiroticaToolStripMenuItem
-            // 
-            this.echipamenteDeBiroticaToolStripMenuItem.Name = "echipamenteDeBiroticaToolStripMenuItem";
-            this.echipamenteDeBiroticaToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.echipamenteDeBiroticaToolStripMenuItem.Text = "Echipamente de birotica";
-            // 
-            // cliențiToolStripMenuItem
-            // 
-            this.cliențiToolStripMenuItem.Name = "cliențiToolStripMenuItem";
-            this.cliențiToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.cliențiToolStripMenuItem.Text = "Clienți";
-            // 
-            // furnizoriToolStripMenuItem
-            // 
-            this.furnizoriToolStripMenuItem.Name = "furnizoriToolStripMenuItem";
-            this.furnizoriToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.furnizoriToolStripMenuItem.Text = "Furnizori";
-            // 
-            // rapoarteToolStripMenuItem
-            // 
-            this.rapoarteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vânzăriToolStripMenuItem,
-            this.stocuriToolStripMenuItem,
-            this.solduriFurnizoriToolStripMenuItem,
-            this.cărțiToolStripMenuItem2});
-            this.rapoarteToolStripMenuItem.Name = "rapoarteToolStripMenuItem";
-            this.rapoarteToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
-            this.rapoarteToolStripMenuItem.Text = "Rapoarte";
-            // 
-            // vânzăriToolStripMenuItem
-            // 
-            this.vânzăriToolStripMenuItem.Name = "vânzăriToolStripMenuItem";
-            this.vânzăriToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.vânzăriToolStripMenuItem.Text = "Vânzări";
-            // 
-            // stocuriToolStripMenuItem
-            // 
-            this.stocuriToolStripMenuItem.Name = "stocuriToolStripMenuItem";
-            this.stocuriToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.stocuriToolStripMenuItem.Text = "Stocuri";
-            // 
-            // solduriFurnizoriToolStripMenuItem
-            // 
-            this.solduriFurnizoriToolStripMenuItem.Name = "solduriFurnizoriToolStripMenuItem";
-            this.solduriFurnizoriToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.solduriFurnizoriToolStripMenuItem.Text = "Solduri Furnizori";
-            // 
-            // cărțiToolStripMenuItem2
-            // 
-            this.cărțiToolStripMenuItem2.Name = "cărțiToolStripMenuItem2";
-            this.cărțiToolStripMenuItem2.Size = new System.Drawing.Size(192, 26);
-            this.cărțiToolStripMenuItem2.Text = "Produse";
-            // 
-            // ajutorToolStripMenuItem
-            // 
-            this.ajutorToolStripMenuItem.Name = "ajutorToolStripMenuItem";
-            this.ajutorToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.ajutorToolStripMenuItem.Text = "Ajutor";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 199);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(716, 272);
-            this.dataGridView1.TabIndex = 67;
+            this.tbPret.DecimalPlaces = 2;
+            this.tbPret.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbPret.Location = new System.Drawing.Point(810, 89);
+            this.tbPret.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.tbPret.Name = "tbPret";
+            this.tbPret.Size = new System.Drawing.Size(283, 26);
+            this.tbPret.TabIndex = 100;
+            this.tbPret.ThousandsSeparator = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(438, 496);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(673, 89);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 33);
-            this.label6.TabIndex = 68;
-            this.label6.Text = "Total 605 RON";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.Size = new System.Drawing.Size(43, 24);
+            this.label6.TabIndex = 99;
+            this.label6.Text = "Pret";
+            // 
+            // cmbTipProdus
+            // 
+            this.cmbTipProdus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipProdus.FormattingEnabled = true;
+            this.cmbTipProdus.Location = new System.Drawing.Point(810, 24);
+            this.cmbTipProdus.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbTipProdus.Name = "cmbTipProdus";
+            this.cmbTipProdus.Size = new System.Drawing.Size(283, 28);
+            this.cmbTipProdus.TabIndex = 98;
+            this.cmbTipProdus.SelectedIndexChanged += new System.EventHandler(this.cmbTipProdus_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(673, 25);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 24);
+            this.label4.TabIndex = 97;
+            this.label4.Text = "Tip Produs";
+            // 
+            // cmbProdus
+            // 
+            this.cmbProdus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProdus.FormattingEnabled = true;
+            this.cmbProdus.Location = new System.Drawing.Point(810, 56);
+            this.cmbProdus.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbProdus.Name = "cmbProdus";
+            this.cmbProdus.Size = new System.Drawing.Size(283, 28);
+            this.cmbProdus.TabIndex = 96;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(673, 57);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 24);
+            this.label2.TabIndex = 95;
+            this.label2.Text = "Produs";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tbNrDoc);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.tbSerie);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.dtData);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.dgvAchizitie);
+            this.groupBox1.Controls.Add(this.cmbFurnizor);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.btnAchizitieModifica);
+            this.groupBox1.Controls.Add(this.btnAchizitieAdaugare);
+            this.groupBox1.Controls.Add(this.btnAchizitieStergere);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(978, 200);
+            this.groupBox1.TabIndex = 107;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Achizitie";
+            // 
+            // tbNrDoc
+            // 
+            this.tbNrDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbNrDoc.Location = new System.Drawing.Point(707, 120);
+            this.tbNrDoc.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.tbNrDoc.Name = "tbNrDoc";
+            this.tbNrDoc.Size = new System.Drawing.Size(265, 26);
+            this.tbNrDoc.TabIndex = 112;
+            this.tbNrDoc.ThousandsSeparator = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(571, 120);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 24);
+            this.label1.TabIndex = 111;
+            this.label1.Text = "Nr. Doc.";
+            // 
+            // tbSerie
+            // 
+            this.tbSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSerie.Location = new System.Drawing.Point(707, 89);
+            this.tbSerie.Margin = new System.Windows.Forms.Padding(2);
+            this.tbSerie.Name = "tbSerie";
+            this.tbSerie.Size = new System.Drawing.Size(266, 26);
+            this.tbSerie.TabIndex = 110;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(571, 89);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 24);
+            this.label7.TabIndex = 109;
+            this.label7.Text = "Serie Doc.";
+            // 
+            // dtData
+            // 
+            this.dtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dtData.Location = new System.Drawing.Point(707, 58);
+            this.dtData.Name = "dtData";
+            this.dtData.Size = new System.Drawing.Size(266, 26);
+            this.dtData.TabIndex = 108;
+            this.dtData.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(571, 58);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 24);
+            this.label8.TabIndex = 107;
+            this.label8.Text = "Data";
+            // 
+            // dgvAchizitie
+            // 
+            this.dgvAchizitie.AllowUserToAddRows = false;
+            this.dgvAchizitie.AllowUserToDeleteRows = false;
+            this.dgvAchizitie.AutoGenerateColumns = false;
+            this.dgvAchizitie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAchizitie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idAchizitieDataGridViewTextBoxColumn,
+            this.idFurnizorDataGridViewTextBoxColumn,
+            this.furnizorDataGridViewTextBoxColumn,
+            this.dataDataGridViewTextBoxColumn,
+            this.nrDocumentDataGridViewTextBoxColumn,
+            this.serieDocumentDataGridViewTextBoxColumn});
+            this.dgvAchizitie.DataSource = this.achizitieBindingSource;
+            this.dgvAchizitie.Location = new System.Drawing.Point(12, 26);
+            this.dgvAchizitie.Name = "dgvAchizitie";
+            this.dgvAchizitie.ReadOnly = true;
+            this.dgvAchizitie.Size = new System.Drawing.Size(531, 163);
+            this.dgvAchizitie.TabIndex = 106;
+            this.dgvAchizitie.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAchizitie_CellClick);
+            // 
+            // idAchizitieDataGridViewTextBoxColumn
+            // 
+            this.idAchizitieDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idAchizitieDataGridViewTextBoxColumn.DataPropertyName = "IdAchizitie";
+            this.idAchizitieDataGridViewTextBoxColumn.HeaderText = "IdAchizitie";
+            this.idAchizitieDataGridViewTextBoxColumn.Name = "idAchizitieDataGridViewTextBoxColumn";
+            this.idAchizitieDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idAchizitieDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // idFurnizorDataGridViewTextBoxColumn
+            // 
+            this.idFurnizorDataGridViewTextBoxColumn.DataPropertyName = "IdFurnizor";
+            this.idFurnizorDataGridViewTextBoxColumn.HeaderText = "IdFurnizor";
+            this.idFurnizorDataGridViewTextBoxColumn.Name = "idFurnizorDataGridViewTextBoxColumn";
+            this.idFurnizorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idFurnizorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // furnizorDataGridViewTextBoxColumn
+            // 
+            this.furnizorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.furnizorDataGridViewTextBoxColumn.DataPropertyName = "Furnizor";
+            this.furnizorDataGridViewTextBoxColumn.HeaderText = "Furnizor";
+            this.furnizorDataGridViewTextBoxColumn.Name = "furnizorDataGridViewTextBoxColumn";
+            this.furnizorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.furnizorDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // nrDocumentDataGridViewTextBoxColumn
+            // 
+            this.nrDocumentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nrDocumentDataGridViewTextBoxColumn.DataPropertyName = "NrDocument";
+            this.nrDocumentDataGridViewTextBoxColumn.HeaderText = "NrDocument";
+            this.nrDocumentDataGridViewTextBoxColumn.Name = "nrDocumentDataGridViewTextBoxColumn";
+            this.nrDocumentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nrDocumentDataGridViewTextBoxColumn.Width = 92;
+            // 
+            // serieDocumentDataGridViewTextBoxColumn
+            // 
+            this.serieDocumentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.serieDocumentDataGridViewTextBoxColumn.DataPropertyName = "SerieDocument";
+            this.serieDocumentDataGridViewTextBoxColumn.HeaderText = "SerieDocument";
+            this.serieDocumentDataGridViewTextBoxColumn.Name = "serieDocumentDataGridViewTextBoxColumn";
+            this.serieDocumentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.serieDocumentDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // achizitieBindingSource
+            // 
+            this.achizitieBindingSource.DataMember = "achizitie";
+            this.achizitieBindingSource.DataSource = this.librarieDataSet;
+            // 
+            // cmbFurnizor
+            // 
+            this.cmbFurnizor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFurnizor.FormattingEnabled = true;
+            this.cmbFurnizor.Location = new System.Drawing.Point(708, 26);
+            this.cmbFurnizor.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbFurnizor.Name = "cmbFurnizor";
+            this.cmbFurnizor.Size = new System.Drawing.Size(265, 28);
+            this.cmbFurnizor.TabIndex = 94;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(571, 27);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 24);
+            this.label3.TabIndex = 93;
+            this.label3.Text = "Furnizor";
+            // 
+            // btnAchizitieModifica
+            // 
+            this.btnAchizitieModifica.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnAchizitieModifica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAchizitieModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAchizitieModifica.Location = new System.Drawing.Point(693, 151);
+            this.btnAchizitieModifica.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAchizitieModifica.Name = "btnAchizitieModifica";
+            this.btnAchizitieModifica.Size = new System.Drawing.Size(138, 38);
+            this.btnAchizitieModifica.TabIndex = 104;
+            this.btnAchizitieModifica.Text = "Modifică";
+            this.btnAchizitieModifica.UseVisualStyleBackColor = false;
+            this.btnAchizitieModifica.Click += new System.EventHandler(this.btnAchizitieModifica_Click);
+            // 
+            // btnAchizitieAdaugare
+            // 
+            this.btnAchizitieAdaugare.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAchizitieAdaugare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAchizitieAdaugare.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAchizitieAdaugare.Location = new System.Drawing.Point(551, 151);
+            this.btnAchizitieAdaugare.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAchizitieAdaugare.Name = "btnAchizitieAdaugare";
+            this.btnAchizitieAdaugare.Size = new System.Drawing.Size(138, 38);
+            this.btnAchizitieAdaugare.TabIndex = 103;
+            this.btnAchizitieAdaugare.Text = "Adaugă";
+            this.btnAchizitieAdaugare.UseVisualStyleBackColor = false;
+            this.btnAchizitieAdaugare.Click += new System.EventHandler(this.btnAchizitieAdaugare_Click);
+            // 
+            // btnAchizitieStergere
+            // 
+            this.btnAchizitieStergere.BackColor = System.Drawing.Color.IndianRed;
+            this.btnAchizitieStergere.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAchizitieStergere.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAchizitieStergere.Location = new System.Drawing.Point(835, 151);
+            this.btnAchizitieStergere.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAchizitieStergere.Name = "btnAchizitieStergere";
+            this.btnAchizitieStergere.Size = new System.Drawing.Size(138, 38);
+            this.btnAchizitieStergere.TabIndex = 105;
+            this.btnAchizitieStergere.Text = "Șterge";
+            this.btnAchizitieStergere.UseVisualStyleBackColor = false;
+            this.btnAchizitieStergere.Click += new System.EventHandler(this.btnAchizitieStergere_Click);
+            // 
+            // achizitieTableAdapter
+            // 
+            this.achizitieTableAdapter.ClearBeforeFill = true;
+            // 
+            // linieachizitieTableAdapter
+            // 
+            this.linieachizitieTableAdapter.ClearBeforeFill = true;
             // 
             // Achizitii
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1035, 567);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.btnStergere);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnModifica);
-            this.Controls.Add(this.btnRenuntare);
-            this.Controls.Add(this.btnAdaugare);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(1172, 499);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Achizitii";
             this.Text = "Achizitii";
             this.Load += new System.EventHandler(this.Achizitii_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLinieAchizitie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.linieachizitieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbCantitate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPret)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbNrDoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAchizitie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.achizitieBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnStergere;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnProdusStergere;
+        private System.Windows.Forms.Button btnProdusModifica;
+        private System.Windows.Forms.Button btnProdusAdaugare;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dgvLinieAchizitie;
+        private System.Windows.Forms.NumericUpDown tbCantitate;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnModifica;
-        private System.Windows.Forms.Button btnRenuntare;
-        private System.Windows.Forms.Button btnAdaugare;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem paginăPrincipalăToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adaugăToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cărțiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem autoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem edituriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cărțiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem echipamenteDeBiroticaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cliențiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem furnizoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rapoarteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vânzăriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stocuriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem solduriFurnizoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cărțiToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem ajutorToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.NumericUpDown tbPret;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbTipProdus;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbProdus;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgvAchizitie;
+        private System.Windows.Forms.ComboBox cmbFurnizor;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAchizitieModifica;
+        private System.Windows.Forms.Button btnAchizitieAdaugare;
+        private System.Windows.Forms.Button btnAchizitieStergere;
+        private LibrarieDataSet librarieDataSet;
+        private System.Windows.Forms.BindingSource achizitieBindingSource;
+        private LibrarieDataSetTableAdapters.achizitieTableAdapter achizitieTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAchizitieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFurnizorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn furnizorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nrDocumentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serieDocumentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource linieachizitieBindingSource;
+        private LibrarieDataSetTableAdapters.linieachizitieTableAdapter linieachizitieTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAchizitieDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProdusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idTipProdusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipProdusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeProdusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantitateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pretDataGridViewTextBoxColumn;
+        private System.Windows.Forms.NumericUpDown tbNrDoc;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbSerie;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtData;
+        private System.Windows.Forms.Label label8;
     }
 }

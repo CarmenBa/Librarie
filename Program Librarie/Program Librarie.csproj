@@ -101,16 +101,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Code\Autori.cs" />
-    <Compile Include="Code\Birotica.cs" />
-    <Compile Include="Code\Client.cs" />
-    <Compile Include="Code\Domenii.cs" />
-    <Compile Include="Code\Edituri.cs" />
-    <Compile Include="Code\Extensions.cs" />
-    <Compile Include="Code\Furnizor.cs" />
-    <Compile Include="Code\Login.cs" />
-    <Compile Include="Code\Oferta.cs" />
-    <Compile Include="Code\Stocuri.cs" />
     <Compile Include="DB\achizitie.cs">
       <DependentUpon>LabDataModel.tt</DependentUpon>
     </Compile>
@@ -228,7 +218,6 @@
     <Compile Include="Form\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Code\MySQL.cs" />
     <Compile Include="Form\Oferta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,18 +267,6 @@
     <Compile Include="Form\Vanzari.Designer.cs">
       <DependentUpon>Vanzari.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form\RaportVanzari.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\RaportVanzari.Designer.cs">
-      <DependentUpon>RaportVanzari.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form\RaportStocuri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\RaportStocuri.Designer.cs">
-      <DependentUpon>RaportStocuri.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form\Achizitii.resx">
       <DependentUpon>Achizitii.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,12 +302,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Produse.resx">
       <DependentUpon>Produse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\RaportStocuri.resx">
-      <DependentUpon>RaportStocuri.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\RaportVanzari.resx">
-      <DependentUpon>RaportVanzari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

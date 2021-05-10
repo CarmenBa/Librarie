@@ -14,8 +14,6 @@ namespace Program_Librarie
         [STAThread]
         static void Main()
         {
-            MySQL.Create();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());

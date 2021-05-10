@@ -29,25 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.edituriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cărțiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.echipamenteDeBiroticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cliențiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.furnizoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rapoarteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vânzăriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stocuriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solduriFurnizoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cărțiToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.autoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajutorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cărțiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.paginăPrincipalăToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adaugăToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStergere = new System.Windows.Forms.Button();
             this.btnModifica = new System.Windows.Forms.Button();
-            this.btnRenuntare = new System.Windows.Forms.Button();
             this.btnAdaugare = new System.Windows.Forms.Button();
             this.dgvAchizitii = new System.Windows.Forms.DataGridView();
             this.idAchizitieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,7 +65,8 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.achizitieTableAdapter = new Program_Librarie.LibrarieDataSetTableAdapters.achizitieTableAdapter();
             this.plataTableAdapter = new Program_Librarie.LibrarieDataSetTableAdapters.plataTableAdapter();
-            this.menuStrip1.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAchizitii)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.achizitieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).BeginInit();
@@ -91,136 +75,19 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbNrDoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSuma)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // edituriToolStripMenuItem
-            // 
-            this.edituriToolStripMenuItem.Name = "edituriToolStripMenuItem";
-            this.edituriToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
-            this.edituriToolStripMenuItem.Text = "Edituri";
-            // 
-            // cărțiToolStripMenuItem1
-            // 
-            this.cărțiToolStripMenuItem1.Name = "cărțiToolStripMenuItem1";
-            this.cărțiToolStripMenuItem1.Size = new System.Drawing.Size(108, 22);
-            this.cărțiToolStripMenuItem1.Text = "Cărți";
-            // 
-            // echipamenteDeBiroticaToolStripMenuItem
-            // 
-            this.echipamenteDeBiroticaToolStripMenuItem.Name = "echipamenteDeBiroticaToolStripMenuItem";
-            this.echipamenteDeBiroticaToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.echipamenteDeBiroticaToolStripMenuItem.Text = "Echipamente de birotica";
-            // 
-            // cliențiToolStripMenuItem
-            // 
-            this.cliențiToolStripMenuItem.Name = "cliențiToolStripMenuItem";
-            this.cliențiToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.cliențiToolStripMenuItem.Text = "Clienți";
-            // 
-            // furnizoriToolStripMenuItem
-            // 
-            this.furnizoriToolStripMenuItem.Name = "furnizoriToolStripMenuItem";
-            this.furnizoriToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.furnizoriToolStripMenuItem.Text = "Furnizori";
-            // 
-            // rapoarteToolStripMenuItem
-            // 
-            this.rapoarteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vânzăriToolStripMenuItem,
-            this.stocuriToolStripMenuItem,
-            this.solduriFurnizoriToolStripMenuItem,
-            this.cărțiToolStripMenuItem2});
-            this.rapoarteToolStripMenuItem.Name = "rapoarteToolStripMenuItem";
-            this.rapoarteToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.rapoarteToolStripMenuItem.Text = "Rapoarte";
-            // 
-            // vânzăriToolStripMenuItem
-            // 
-            this.vânzăriToolStripMenuItem.Name = "vânzăriToolStripMenuItem";
-            this.vânzăriToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.vânzăriToolStripMenuItem.Text = "Vânzări";
-            // 
-            // stocuriToolStripMenuItem
-            // 
-            this.stocuriToolStripMenuItem.Name = "stocuriToolStripMenuItem";
-            this.stocuriToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.stocuriToolStripMenuItem.Text = "Stocuri";
-            // 
-            // solduriFurnizoriToolStripMenuItem
-            // 
-            this.solduriFurnizoriToolStripMenuItem.Name = "solduriFurnizoriToolStripMenuItem";
-            this.solduriFurnizoriToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.solduriFurnizoriToolStripMenuItem.Text = "Solduri Furnizori";
-            // 
-            // cărțiToolStripMenuItem2
-            // 
-            this.cărțiToolStripMenuItem2.Name = "cărțiToolStripMenuItem2";
-            this.cărțiToolStripMenuItem2.Size = new System.Drawing.Size(160, 22);
-            this.cărțiToolStripMenuItem2.Text = "Produse";
-            // 
-            // autoriToolStripMenuItem
-            // 
-            this.autoriToolStripMenuItem.Name = "autoriToolStripMenuItem";
-            this.autoriToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
-            this.autoriToolStripMenuItem.Text = "Autori";
-            // 
-            // ajutorToolStripMenuItem
-            // 
-            this.ajutorToolStripMenuItem.Name = "ajutorToolStripMenuItem";
-            this.ajutorToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.ajutorToolStripMenuItem.Text = "Ajutor";
-            // 
-            // cărțiToolStripMenuItem
-            // 
-            this.cărțiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autoriToolStripMenuItem,
-            this.edituriToolStripMenuItem,
-            this.cărțiToolStripMenuItem1});
-            this.cărțiToolStripMenuItem.Name = "cărțiToolStripMenuItem";
-            this.cărțiToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.cărțiToolStripMenuItem.Text = "Cărți și despre cărți";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.paginăPrincipalăToolStripMenuItem,
-            this.adaugăToolStripMenuItem,
-            this.rapoarteToolStripMenuItem,
-            this.ajutorToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1092, 24);
-            this.menuStrip1.TabIndex = 69;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // paginăPrincipalăToolStripMenuItem
-            // 
-            this.paginăPrincipalăToolStripMenuItem.Name = "paginăPrincipalăToolStripMenuItem";
-            this.paginăPrincipalăToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.paginăPrincipalăToolStripMenuItem.Text = "Acasă";
-            // 
-            // adaugăToolStripMenuItem
-            // 
-            this.adaugăToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cărțiToolStripMenuItem,
-            this.echipamenteDeBiroticaToolStripMenuItem,
-            this.cliențiToolStripMenuItem,
-            this.furnizoriToolStripMenuItem});
-            this.adaugăToolStripMenuItem.Name = "adaugăToolStripMenuItem";
-            this.adaugăToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.adaugăToolStripMenuItem.Text = "Adaugă";
             // 
             // btnStergere
             // 
             this.btnStergere.BackColor = System.Drawing.Color.IndianRed;
             this.btnStergere.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnStergere.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStergere.Location = new System.Drawing.Point(911, 335);
+            this.btnStergere.Location = new System.Drawing.Point(291, 197);
             this.btnStergere.Margin = new System.Windows.Forms.Padding(2);
             this.btnStergere.Name = "btnStergere";
-            this.btnStergere.Size = new System.Drawing.Size(170, 38);
+            this.btnStergere.Size = new System.Drawing.Size(135, 38);
             this.btnStergere.TabIndex = 85;
             this.btnStergere.Text = "Șterge";
             this.btnStergere.UseVisualStyleBackColor = false;
@@ -228,41 +95,27 @@
             // 
             // btnModifica
             // 
-            this.btnModifica.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnModifica.BackColor = System.Drawing.Color.PaleGreen;
             this.btnModifica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifica.Location = new System.Drawing.Point(737, 377);
+            this.btnModifica.Location = new System.Drawing.Point(152, 197);
             this.btnModifica.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifica.Name = "btnModifica";
-            this.btnModifica.Size = new System.Drawing.Size(170, 38);
+            this.btnModifica.Size = new System.Drawing.Size(135, 38);
             this.btnModifica.TabIndex = 76;
             this.btnModifica.Text = "Modifică";
             this.btnModifica.UseVisualStyleBackColor = false;
             this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
-            // 
-            // btnRenuntare
-            // 
-            this.btnRenuntare.BackColor = System.Drawing.Color.IndianRed;
-            this.btnRenuntare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRenuntare.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRenuntare.Location = new System.Drawing.Point(911, 377);
-            this.btnRenuntare.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRenuntare.Name = "btnRenuntare";
-            this.btnRenuntare.Size = new System.Drawing.Size(170, 38);
-            this.btnRenuntare.TabIndex = 75;
-            this.btnRenuntare.Text = "Renunță";
-            this.btnRenuntare.UseVisualStyleBackColor = false;
-            this.btnRenuntare.Click += new System.EventHandler(this.btnRenuntare_Click);
             // 
             // btnAdaugare
             // 
             this.btnAdaugare.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAdaugare.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdaugare.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdaugare.Location = new System.Drawing.Point(737, 335);
+            this.btnAdaugare.Location = new System.Drawing.Point(13, 197);
             this.btnAdaugare.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdaugare.Name = "btnAdaugare";
-            this.btnAdaugare.Size = new System.Drawing.Size(170, 38);
+            this.btnAdaugare.Size = new System.Drawing.Size(135, 38);
             this.btnAdaugare.TabIndex = 74;
             this.btnAdaugare.Text = "Adaugă";
             this.btnAdaugare.UseVisualStyleBackColor = false;
@@ -282,7 +135,7 @@
             this.serieDocumentDataGridViewTextBoxColumn,
             this.nrDocumentDataGridViewTextBoxColumn});
             this.dgvAchizitii.DataSource = this.achizitieBindingSource;
-            this.dgvAchizitii.Location = new System.Drawing.Point(12, 39);
+            this.dgvAchizitii.Location = new System.Drawing.Point(6, 25);
             this.dgvAchizitii.Name = "dgvAchizitii";
             this.dgvAchizitii.ReadOnly = true;
             this.dgvAchizitii.Size = new System.Drawing.Size(633, 122);
@@ -369,7 +222,7 @@
             this.sumaDataGridViewTextBoxColumn,
             this.idFurnizorDataGridViewTextBoxColumn1});
             this.dgvPlati.DataSource = this.plataBindingSource;
-            this.dgvPlati.Location = new System.Drawing.Point(12, 167);
+            this.dgvPlati.Location = new System.Drawing.Point(6, 26);
             this.dgvPlati.Name = "dgvPlati";
             this.dgvPlati.ReadOnly = true;
             this.dgvPlati.Size = new System.Drawing.Size(633, 206);
@@ -480,10 +333,10 @@
             // 
             this.cmbFurnizor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFurnizor.FormattingEnabled = true;
-            this.cmbFurnizor.Location = new System.Drawing.Point(147, 41);
+            this.cmbFurnizor.Location = new System.Drawing.Point(152, 41);
             this.cmbFurnizor.Margin = new System.Windows.Forms.Padding(2);
             this.cmbFurnizor.Name = "cmbFurnizor";
-            this.cmbFurnizor.Size = new System.Drawing.Size(219, 28);
+            this.cmbFurnizor.Size = new System.Drawing.Size(274, 28);
             this.cmbFurnizor.TabIndex = 73;
             // 
             // groupBox2
@@ -492,18 +345,21 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.tbSerie);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.btnStergere);
             this.groupBox2.Controls.Add(this.dtData);
+            this.groupBox2.Controls.Add(this.btnModifica);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.tbSuma);
+            this.groupBox2.Controls.Add(this.btnAdaugare);
             this.groupBox2.Controls.Add(this.cmbFurnizor);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(671, 39);
+            this.groupBox2.Location = new System.Drawing.Point(672, 177);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(410, 208);
+            this.groupBox2.Size = new System.Drawing.Size(440, 251);
             this.groupBox2.TabIndex = 98;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Date pentru efectuarea plății";
@@ -511,14 +367,14 @@
             // tbNrDoc
             // 
             this.tbNrDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbNrDoc.Location = new System.Drawing.Point(147, 166);
+            this.tbNrDoc.Location = new System.Drawing.Point(152, 166);
             this.tbNrDoc.Maximum = new decimal(new int[] {
             1215752191,
             23,
             0,
             0});
             this.tbNrDoc.Name = "tbNrDoc";
-            this.tbNrDoc.Size = new System.Drawing.Size(219, 26);
+            this.tbNrDoc.Size = new System.Drawing.Size(274, 26);
             this.tbNrDoc.TabIndex = 102;
             this.tbNrDoc.ThousandsSeparator = true;
             // 
@@ -536,10 +392,10 @@
             // tbSerie
             // 
             this.tbSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSerie.Location = new System.Drawing.Point(147, 137);
+            this.tbSerie.Location = new System.Drawing.Point(152, 137);
             this.tbSerie.Margin = new System.Windows.Forms.Padding(2);
             this.tbSerie.Name = "tbSerie";
-            this.tbSerie.Size = new System.Drawing.Size(219, 26);
+            this.tbSerie.Size = new System.Drawing.Size(274, 26);
             this.tbSerie.TabIndex = 92;
             // 
             // label4
@@ -555,9 +411,9 @@
             // 
             // dtData
             // 
-            this.dtData.Location = new System.Drawing.Point(147, 106);
+            this.dtData.Location = new System.Drawing.Point(152, 106);
             this.dtData.Name = "dtData";
-            this.dtData.Size = new System.Drawing.Size(219, 26);
+            this.dtData.Size = new System.Drawing.Size(274, 26);
             this.dtData.TabIndex = 90;
             this.dtData.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
             // 
@@ -576,14 +432,14 @@
             // 
             this.tbSuma.DecimalPlaces = 2;
             this.tbSuma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tbSuma.Location = new System.Drawing.Point(147, 74);
+            this.tbSuma.Location = new System.Drawing.Point(152, 74);
             this.tbSuma.Maximum = new decimal(new int[] {
             1215752191,
             23,
             0,
             0});
             this.tbSuma.Name = "tbSuma";
-            this.tbSuma.Size = new System.Drawing.Size(219, 26);
+            this.tbSuma.Size = new System.Drawing.Size(274, 26);
             this.tbSuma.TabIndex = 88;
             this.tbSuma.ThousandsSeparator = true;
             // 
@@ -592,7 +448,7 @@
             this.btnReset.BackColor = System.Drawing.Color.IndianRed;
             this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(12, 384);
+            this.btnReset.Location = new System.Drawing.Point(19, 433);
             this.btnReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(170, 38);
@@ -609,27 +465,42 @@
             // 
             this.plataTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvAchizitii);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox1.Location = new System.Drawing.Point(13, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(654, 157);
+            this.groupBox1.TabIndex = 102;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Achizitii";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvPlati);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.groupBox3.Location = new System.Drawing.Point(13, 177);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(654, 251);
+            this.groupBox3.TabIndex = 103;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Plati";
+            // 
             // Plati
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1092, 433);
+            this.ClientSize = new System.Drawing.Size(1125, 485);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.dgvPlati);
-            this.Controls.Add(this.dgvAchizitii);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.btnStergere);
-            this.Controls.Add(this.btnModifica);
-            this.Controls.Add(this.btnRenuntare);
-            this.Controls.Add(this.btnAdaugare);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Plati";
             this.Text = "Plati";
             this.Load += new System.EventHandler(this.Plati_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAchizitii)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.achizitieBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).EndInit();
@@ -639,31 +510,15 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbNrDoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbSuma)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ToolStripMenuItem edituriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cărțiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem echipamenteDeBiroticaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cliențiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem furnizoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rapoarteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vânzăriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stocuriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem solduriFurnizoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cărțiToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem autoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ajutorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cărțiToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem paginăPrincipalăToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adaugăToolStripMenuItem;
         private System.Windows.Forms.Button btnStergere;
         private System.Windows.Forms.Button btnModifica;
-        private System.Windows.Forms.Button btnRenuntare;
         private System.Windows.Forms.Button btnAdaugare;
         private System.Windows.Forms.DataGridView dgvAchizitii;
         private System.Windows.Forms.DataGridView dgvPlati;
@@ -698,5 +553,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nrDocumentDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idFurnizorDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

@@ -28,265 +28,243 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.tbValMax = new System.Windows.Forms.NumericUpDown();
+            this.tbValMin = new System.Windows.Forms.NumericUpDown();
+            this.cmbFurnizor = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCauta = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.paginăPrincipalăToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adaugăToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cărțiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.autoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.edituriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cărțiToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.echipamenteDeBiroticaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cliențiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.furnizoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rapoarteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vânzăriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stocuriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.solduriFurnizoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cărțiToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajutorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.librarieDataSet = new Program_Librarie.LibrarieDataSet();
+            this.furnizorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.furnizorTableAdapter = new Program_Librarie.LibrarieDataSetTableAdapters.furnizorTableAdapter();
+            this.idFurnizorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soldDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.tbValMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbValMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furnizorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // btnReset
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(207, 220);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 34);
-            this.textBox1.TabIndex = 63;
+            this.btnReset.BackColor = System.Drawing.Color.IndianRed;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(409, 71);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(170, 38);
+            this.btnReset.TabIndex = 87;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // label1
+            // tbValMax
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 221);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 33);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "Sold maxim";
+            this.tbValMax.DecimalPlaces = 2;
+            this.tbValMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbValMax.Location = new System.Drawing.Point(184, 83);
+            this.tbValMax.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.tbValMax.Name = "tbValMax";
+            this.tbValMax.Size = new System.Drawing.Size(189, 26);
+            this.tbValMax.TabIndex = 86;
+            this.tbValMax.ThousandsSeparator = true;
             // 
-            // textBox3
+            // tbValMin
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(207, 165);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(251, 34);
-            this.textBox3.TabIndex = 61;
+            this.tbValMin.DecimalPlaces = 2;
+            this.tbValMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tbValMin.Location = new System.Drawing.Point(184, 51);
+            this.tbValMin.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
+            this.tbValMin.Name = "tbValMin";
+            this.tbValMin.Size = new System.Drawing.Size(189, 26);
+            this.tbValMin.TabIndex = 85;
+            this.tbValMin.ThousandsSeparator = true;
+            // 
+            // cmbFurnizor
+            // 
+            this.cmbFurnizor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFurnizor.FormattingEnabled = true;
+            this.cmbFurnizor.Location = new System.Drawing.Point(184, 17);
+            this.cmbFurnizor.Name = "cmbFurnizor";
+            this.cmbFurnizor.Size = new System.Drawing.Size(189, 28);
+            this.cmbFurnizor.TabIndex = 84;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 24);
+            this.label2.TabIndex = 83;
+            this.label2.Text = "Furnizor";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 166);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 51);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(140, 33);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "Sold minim";
+            this.label4.Size = new System.Drawing.Size(155, 24);
+            this.label4.TabIndex = 81;
+            this.label4.Text = "Valoare minimă";
             // 
             // btnCauta
             // 
             this.btnCauta.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnCauta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCauta.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCauta.Location = new System.Drawing.Point(556, 207);
+            this.btnCauta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCauta.Location = new System.Drawing.Point(409, 29);
+            this.btnCauta.Margin = new System.Windows.Forms.Padding(2);
             this.btnCauta.Name = "btnCauta";
-            this.btnCauta.Size = new System.Drawing.Size(226, 47);
-            this.btnCauta.TabIndex = 59;
+            this.btnCauta.Size = new System.Drawing.Size(170, 38);
+            this.btnCauta.TabIndex = 80;
             this.btnCauta.Text = "Caută";
             this.btnCauta.UseVisualStyleBackColor = false;
+            this.btnCauta.Click += new System.EventHandler(this.btnCauta_Click);
             // 
-            // comboBox2
+            // label1
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(207, 112);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(251, 34);
-            this.comboBox2.TabIndex = 57;
-            this.comboBox2.Text = "Toate localitățile";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 83);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 24);
+            this.label1.TabIndex = 82;
+            this.label1.Text = "Valoare maximă";
             // 
-            // label3
+            // dataGridView1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 113);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 33);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "Localitate";
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idFurnizorDataGridViewTextBoxColumn,
+            this.numeDataGridViewTextBoxColumn,
+            this.cUIDataGridViewTextBoxColumn,
+            this.soldDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.telefonDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.furnizorBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(16, 123);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(602, 403);
+            this.dataGridView1.TabIndex = 88;
             // 
-            // comboBox1
+            // librarieDataSet
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(207, 60);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(251, 34);
-            this.comboBox1.TabIndex = 65;
-            this.comboBox1.Text = "Toți furnizorii";
+            this.librarieDataSet.DataSetName = "LibrarieDataSet";
+            this.librarieDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label2
+            // furnizorBindingSource
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 61);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 33);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "Furnizor";
+            this.furnizorBindingSource.DataMember = "furnizor";
+            this.furnizorBindingSource.DataSource = this.librarieDataSet;
             // 
-            // menuStrip1
+            // furnizorTableAdapter
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.paginăPrincipalăToolStripMenuItem,
-            this.adaugăToolStripMenuItem,
-            this.rapoarteToolStripMenuItem,
-            this.ajutorToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(816, 28);
-            this.menuStrip1.TabIndex = 46;
-            this.menuStrip1.Text = "menuStrip1";
+            this.furnizorTableAdapter.ClearBeforeFill = true;
             // 
-            // paginăPrincipalăToolStripMenuItem
+            // idFurnizorDataGridViewTextBoxColumn
             // 
-            this.paginăPrincipalăToolStripMenuItem.Name = "paginăPrincipalăToolStripMenuItem";
-            this.paginăPrincipalăToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
-            this.paginăPrincipalăToolStripMenuItem.Text = "Acasă";
-            this.paginăPrincipalăToolStripMenuItem.Click += new System.EventHandler(this.paginăPrincipalăToolStripMenuItem_Click);
+            this.idFurnizorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.idFurnizorDataGridViewTextBoxColumn.DataPropertyName = "IdFurnizor";
+            this.idFurnizorDataGridViewTextBoxColumn.HeaderText = "IdFurnizor";
+            this.idFurnizorDataGridViewTextBoxColumn.Name = "idFurnizorDataGridViewTextBoxColumn";
+            this.idFurnizorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idFurnizorDataGridViewTextBoxColumn.Width = 78;
             // 
-            // adaugăToolStripMenuItem
+            // numeDataGridViewTextBoxColumn
             // 
-            this.adaugăToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cărțiToolStripMenuItem,
-            this.echipamenteDeBiroticaToolStripMenuItem,
-            this.cliențiToolStripMenuItem,
-            this.furnizoriToolStripMenuItem});
-            this.adaugăToolStripMenuItem.Name = "adaugăToolStripMenuItem";
-            this.adaugăToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.adaugăToolStripMenuItem.Text = "Adaugă";
+            this.numeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.numeDataGridViewTextBoxColumn.DataPropertyName = "Nume";
+            this.numeDataGridViewTextBoxColumn.HeaderText = "Nume";
+            this.numeDataGridViewTextBoxColumn.Name = "numeDataGridViewTextBoxColumn";
+            this.numeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numeDataGridViewTextBoxColumn.Width = 60;
             // 
-            // cărțiToolStripMenuItem
+            // cUIDataGridViewTextBoxColumn
             // 
-            this.cărțiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.autoriToolStripMenuItem,
-            this.edituriToolStripMenuItem,
-            this.cărțiToolStripMenuItem1});
-            this.cărțiToolStripMenuItem.Name = "cărțiToolStripMenuItem";
-            this.cărțiToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.cărțiToolStripMenuItem.Text = "Cărți și despre cărți";
+            this.cUIDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cUIDataGridViewTextBoxColumn.DataPropertyName = "CUI";
+            this.cUIDataGridViewTextBoxColumn.HeaderText = "CUI";
+            this.cUIDataGridViewTextBoxColumn.Name = "cUIDataGridViewTextBoxColumn";
+            this.cUIDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUIDataGridViewTextBoxColumn.Width = 50;
             // 
-            // autoriToolStripMenuItem
+            // soldDataGridViewTextBoxColumn
             // 
-            this.autoriToolStripMenuItem.Name = "autoriToolStripMenuItem";
-            this.autoriToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
-            this.autoriToolStripMenuItem.Text = "Autori";
+            this.soldDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.soldDataGridViewTextBoxColumn.DataPropertyName = "Sold";
+            this.soldDataGridViewTextBoxColumn.HeaderText = "Sold";
+            this.soldDataGridViewTextBoxColumn.Name = "soldDataGridViewTextBoxColumn";
+            this.soldDataGridViewTextBoxColumn.ReadOnly = true;
+            this.soldDataGridViewTextBoxColumn.Width = 53;
             // 
-            // edituriToolStripMenuItem
+            // emailDataGridViewTextBoxColumn
             // 
-            this.edituriToolStripMenuItem.Name = "edituriToolStripMenuItem";
-            this.edituriToolStripMenuItem.Size = new System.Drawing.Size(127, 26);
-            this.edituriToolStripMenuItem.Text = "Edituri";
+            this.emailDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 57;
             // 
-            // cărțiToolStripMenuItem1
+            // telefonDataGridViewTextBoxColumn
             // 
-            this.cărțiToolStripMenuItem1.Name = "cărțiToolStripMenuItem1";
-            this.cărțiToolStripMenuItem1.Size = new System.Drawing.Size(127, 26);
-            this.cărțiToolStripMenuItem1.Text = "Cărți";
-            // 
-            // echipamenteDeBiroticaToolStripMenuItem
-            // 
-            this.echipamenteDeBiroticaToolStripMenuItem.Name = "echipamenteDeBiroticaToolStripMenuItem";
-            this.echipamenteDeBiroticaToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.echipamenteDeBiroticaToolStripMenuItem.Text = "Echipamente de birotica";
-            // 
-            // cliențiToolStripMenuItem
-            // 
-            this.cliențiToolStripMenuItem.Name = "cliențiToolStripMenuItem";
-            this.cliențiToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.cliențiToolStripMenuItem.Text = "Clienți";
-            // 
-            // furnizoriToolStripMenuItem
-            // 
-            this.furnizoriToolStripMenuItem.Name = "furnizoriToolStripMenuItem";
-            this.furnizoriToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
-            this.furnizoriToolStripMenuItem.Text = "Furnizori";
-            // 
-            // rapoarteToolStripMenuItem
-            // 
-            this.rapoarteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vânzăriToolStripMenuItem,
-            this.stocuriToolStripMenuItem,
-            this.solduriFurnizoriToolStripMenuItem,
-            this.cărțiToolStripMenuItem2});
-            this.rapoarteToolStripMenuItem.Name = "rapoarteToolStripMenuItem";
-            this.rapoarteToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
-            this.rapoarteToolStripMenuItem.Text = "Rapoarte";
-            // 
-            // vânzăriToolStripMenuItem
-            // 
-            this.vânzăriToolStripMenuItem.Name = "vânzăriToolStripMenuItem";
-            this.vânzăriToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.vânzăriToolStripMenuItem.Text = "Vânzări";
-            // 
-            // stocuriToolStripMenuItem
-            // 
-            this.stocuriToolStripMenuItem.Name = "stocuriToolStripMenuItem";
-            this.stocuriToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.stocuriToolStripMenuItem.Text = "Stocuri";
-            // 
-            // solduriFurnizoriToolStripMenuItem
-            // 
-            this.solduriFurnizoriToolStripMenuItem.Name = "solduriFurnizoriToolStripMenuItem";
-            this.solduriFurnizoriToolStripMenuItem.Size = new System.Drawing.Size(192, 26);
-            this.solduriFurnizoriToolStripMenuItem.Text = "Solduri Furnizori";
-            // 
-            // cărțiToolStripMenuItem2
-            // 
-            this.cărțiToolStripMenuItem2.Name = "cărțiToolStripMenuItem2";
-            this.cărțiToolStripMenuItem2.Size = new System.Drawing.Size(192, 26);
-            this.cărțiToolStripMenuItem2.Text = "Produse";
-            // 
-            // ajutorToolStripMenuItem
-            // 
-            this.ajutorToolStripMenuItem.Name = "ajutorToolStripMenuItem";
-            this.ajutorToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.ajutorToolStripMenuItem.Text = "Ajutor";
+            this.telefonDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.telefonDataGridViewTextBoxColumn.DataPropertyName = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
+            this.telefonDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefonDataGridViewTextBoxColumn.Width = 68;
             // 
             // SoldFurnizori
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(816, 310);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(631, 548);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.tbValMax);
+            this.Controls.Add(this.tbValMin);
+            this.Controls.Add(this.cmbFurnizor);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnCauta);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SoldFurnizori";
             this.Text = "SoldFurnizori";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.SoldFurnizori_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tbValMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbValMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.librarieDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furnizorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,30 +272,23 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.NumericUpDown tbValMax;
+        private System.Windows.Forms.NumericUpDown tbValMin;
+        private System.Windows.Forms.ComboBox cmbFurnizor;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCauta;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem paginăPrincipalăToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adaugăToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cărțiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem autoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem edituriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cărțiToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem echipamenteDeBiroticaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cliențiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem furnizoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rapoarteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem vânzăriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stocuriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem solduriFurnizoriToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cărțiToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem ajutorToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private LibrarieDataSet librarieDataSet;
+        private System.Windows.Forms.BindingSource furnizorBindingSource;
+        private LibrarieDataSetTableAdapters.furnizorTableAdapter furnizorTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFurnizorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUIDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soldDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Program_Librarie.DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,22 @@ namespace Program_Librarie
 
         private void btnConectare_Click(object sender, EventArgs e)
         {
-            var logged = Code.Login.Connect(txtUtilizator.Text, txtParola.Text);
+            var id = txtUtilizator.Text;
+            var password = txtParola.Text;
+            var logged = false;
+            using (LabDataContext lb = new LabDataContext())
+            {
+                var utilizator = lb.utilizator.FirstOrDefault(x => x.IdUtilizator.Equals(id) && x.Parola.Equals(password));
+                if (utilizator != null)
+                {
+                    logged = true;
+                }
+                else
+                {
+                    MessageBox.Show("Utilizatorul sau parola nu sunt introduse corect");
+                    logged = false;
+                }
+            }
 
             if (logged)
             {
