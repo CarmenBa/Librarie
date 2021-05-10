@@ -50,6 +50,7 @@ namespace Program_Librarie
             {
                 var newClient = new client()
                 {
+                    IdClient = lb.client.Max(x => x.IdClient) + 1,
                     Nume = currentEdit.Nume,
                     Varsta = (int)currentEdit.Varsta,
                     Sex = currentEdit.Sex,
